@@ -12,15 +12,17 @@
 </head>
 <body>
 
-    <nav>
-        <img src="Images/Logo.jpeg" alt="Logo" width="35">
-        <a href="index.html"><strong>Home</strong></a>
-        <a href="index.html">La escuela</a>
-        <a href="index.html">Nuestros cursos</a>
-        <a href="">Si eres empresa</a>
-        <a href="../Ejercicio4/blog.html">Blog</a>
-        <a href="index.html">Contacto</a>
-    </nav><br><br>
+    <header>
+        <nav>
+            <img src="Images/Logo.jpeg" alt="Logo" width="35">
+            <a href="index.html"><strong>Home</strong></a>
+            <a href="index.html">La escuela</a>
+            <a href="index.html">Nuestros cursos</a>
+            <a href="">Si eres empresa</a>
+            <a href="../Ejercicio4/blog.html">Blog</a>
+            <a href="index.html">Contacto</a>
+        </nav><br><br>
+    </header>
 
     <h2>Bienvenido a CodeSpace Academy</h2>
 
@@ -50,7 +52,15 @@
                 <label for="passwordInput">Introduce de nuevo la contraseña</label><br>
                 <input type="password" id="passwordInput" name="password" placeholder="*********" required> <br><br>
             </div>
-        </form>
+            <div>
+                <input type="checkbox" name="Conditions" id="ConditionsInput" requiered>
+                <label for="ConditionsInput">Acepto los términos y condiciones</label>
+            </div>
+            <div>
+                <input type="checkbox" name="AcceptedEmails" id="AccEmails">
+                <label for="AccEmails">Acepto recibir información actualizada en mi email</label>
+            </div>
+        </form><br><br>
         <form action="Created.html" method="GET">
             <input type="submit" value="Crear cuenta">
         </form>
