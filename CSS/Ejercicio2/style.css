@@ -1,0 +1,7 @@
+ul li {
+    list-style: none;
+    display: inline-block;
+    border: 1px solid #555;
+    background-color: rgb(192, 190, 190);
+    
+}
