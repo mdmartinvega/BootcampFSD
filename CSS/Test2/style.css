@@ -1,0 +1,31 @@
+/* Tipos de Display: none, inline, block, inline-block */
+
+/* Aplicamos valores para clases que empiezan por box */
+[class^=box] {
+    background-color: steelblue;
+}
+.box-0 {
+    display: none;
+}
+
+/* Para volver la clase y el p de tipo bloack a inline, seleccionamos */
+/* tanto las clases del div como los parrafos de dentro */
+.box-5, .box-6, .box-5 p, .box-6 p  {
+    display: inline;
+}
+
+/* Para convertir elementos a inline pero con ciertas características de  */
+/* block como márgenes */
+
+.box-3, .box-4, .box-3 p, .box-4 p {
+    display: inline-block;   
+}
+
+/* Centrar horizontalmenete. Eje x */
+
+.x-centered {
+    background-color: teal;
+    height: 50px;
+    width: 25%;
+    margin: auto;
+}

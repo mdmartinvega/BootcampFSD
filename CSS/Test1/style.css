@@ -1,6 +1,43 @@
 
-div {
+/* div {
     background-color: aquamarine;
     height: 400px;
     width: 100px;
+} */
+
+* {
+    font-size: 16px;
+}
+
+#imagen {
+    height: 50vh;
+    
+    background-image: url(Images/Malaga.jpeg);
+    
+    /* eje x:left center right // eje y: top center bottom */
+    background-position: center bottom;
+
+    /* Para que la imagen quede fijada */
+    /* background-attachment: fixed; */
+
+    /* Cuando la img es más pequeña que el contenedor */
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+}
+
+h1 {
+    margin: 100px;
+    border: orange solid 20px;
+    padding: 0.5em;
+    
+}
+
+a {
+    margin: 150px;
+}
+
+span {
+   margin: 200px; 
+   padding: 100px;
 }
