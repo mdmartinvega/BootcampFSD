@@ -1,7 +1,22 @@
-ul li {
-    list-style: none;
+div {
+    border: 2px solid rgb(128, 128, 128);
+    width: 25%;
+    margin: auto;
+    background-color: rgb(207, 206, 206);
+}
+
+div p {
     display: inline-block;
-    border: 1px solid #555;
-    background-color: rgb(192, 190, 190);
-    
+}
+
+.p2 {
+    float: right;
+    margin-right: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.p1 {
+    margin-left: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
