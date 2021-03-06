@@ -1,0 +1,45 @@
+* {
+    font-size: 0.9rem;
+}
+
+main {
+    overflow: hidden;
+    
+}
+
+/* <!-- Cuadrado grande con las noticias --> */
+section {
+    border: 3px solid grey;
+    float: right;
+    overflow: hidden;
+    width: 82%;
+}
+/* <!-- Artículos pequeños a la derecha --> */
+.contenedor-1 {
+    border: 2px solid grey;
+    width: 20%;
+    float: right;
+}
+/* <!-- Artículos grandes de en medio --> */
+.contenedor-2 {
+    border: 2px solid grey;
+    width: 78%; 
+    overflow: hidden; 
+    
+}
+.contenedor-2 img{
+    float: left;
+    padding-right: 10px;
+}
+
+
+/* <!-- Aside de la izquierda --> */
+aside {
+    border: 3px solid grey;
+    width: 16%;
+    float: left;
+}
+ul li {
+    list-style: none;
+
+}
