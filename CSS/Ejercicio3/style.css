@@ -1,0 +1,14 @@
+a {
+    color: #000;
+    text-decoration: none;
+    cursor: url(Images/mano.png)
+}
+
+
+li {
+    list-style: none;
+    border: 1px solid grey;
+    background-color: #d6d4d4;
+    width: 200px;
+    padding: 5px;
+}
