@@ -4,7 +4,6 @@
     font-size: 0.9rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
-   
 }
 a {
     color: rgb(14, 13, 13);
@@ -16,7 +15,6 @@ a:hover {
 h2 {
     font-size: 1.2rem;
     color: #363636;
-    
 }
 h3 {
     font-size: 1rem;
@@ -26,24 +24,24 @@ span {
 }
 time {
     font-size: 0.8rem;
+    font-weight: bold;
 }
 
 /* Navegador */
+/* <!-- Navegador con logo y buscador --> */
 .nav-1 {
     position: relative;
     border: 2px solid #000;
-    background-color: #000;
-    
+    background-color: #000;  
 }
-
 .Searcher {
     position: absolute;
     right: 1%;
     top: 50%;
     margin-top: -20px;
-    color: #FFCE00;
-    
+    color: #FFCE00;   
 }
+/* <!-- Navegador con enlaces --> */
 .nav-2 {
     border: 2px solid #000;
     background-color: #FFCE00;
@@ -56,21 +54,20 @@ time {
     text-transform: uppercase;
 }
 
-/* Todos los artículos de la página */
+/* Cuerpo principal */
 main {
     overflow: hidden;
 }
 
-/* <!-- Cuadrado grande con las noticias --> */
-.section {
+/* <!-- Sección grande --> */
+.big-section {
     /* border: 1px solid #000; */
     float: right;
     overflow: hidden;
     width: 80%;
-    
 }
-/* <!-- Artículos pequeños a la derecha --> */
-.contenedor-1 {
+/* <!-- Artículos a la derecha --> */
+.right-contener {
     /* border: 1px solid #000; */
     width: 17%;
     float: right;
@@ -79,34 +76,32 @@ main {
     border-right: none;
     margin-left: 3%;
 }
-.contenedor-1 p {
+.right-contener p {
     margin-bottom: 5px;
 }
-.contenedor-1 a {
+.right-contener a {
     font-style: italic;
 }
-/* <!-- Artículos grandes de en medio --> */
-.contenedor-2 {
+/* <!-- Artículos principales --> */
+.main-contener {
     /* border: 1px solid #000; */
     width: 80%; 
     overflow: hidden; 
     padding: 5px;
     float: right;
-  
 }
-.contenedor-2 img{
+.main-contener img{
     float: left;
     padding-right: 10px;
 }
-.contenedor-2 p {
+.main-contener p {
     margin-bottom: 5px;
 }
-.contenedor-2 a {
+.main-contener a {
     font-style: italic;
 }
 
-
-/* <!-- Aside de la izquierda --> */
+/* <!-- Aside izquierda --> */
 aside {
     border: 1px solid #000;
     width: 17%;
@@ -116,21 +111,24 @@ aside {
     margin-right: 3%;
     background-color: #b8b8b8;
 }
-.News h3 {
+.news h3 {
     margin-bottom: 5px;
     text-transform: uppercase;
 }
 .related-links a{
    display: block;
+   font-size: 1rem;
 
 }
-.Publicity h3{
+.publicity h3{
     margin-bottom: 5px;
     text-transform: uppercase;
 }
-.Publicity p {
+.publicity p {
     margin-bottom: 5px;
-    
+}
+.publicity a {
+    font-style: italic;
 }
 /* Footer  */
 footer {
@@ -145,7 +143,7 @@ footer a{
     padding-left: 10px;
     text-transform: uppercase;
 }
-
+/* Footer copiright */
 .footer-2 {
     position: absolute;
     right: 1%;
