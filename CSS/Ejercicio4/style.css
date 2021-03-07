@@ -55,9 +55,13 @@ time {
 }
 
 /* Cuerpo principal */
-main {
+/* main {
     overflow: hidden;
-}
+} */
+
+/* body {
+    overflow: hidden;
+} */
 
 /* <!-- Sección grande --> */
 .big-section {
@@ -105,11 +109,12 @@ main {
 aside {
     border: 1px solid #000;
     width: 17%;
-    float: left;
+    float: right;
     padding: 5px;
     overflow: hidden;
     margin-right: 3%;
     background-color: #b8b8b8;
+    margin-bottom: 5px;
 }
 .news h3 {
     margin-bottom: 5px;
@@ -127,7 +132,7 @@ aside {
 .publicity p {
     margin-bottom: 5px;
 }
-.publicity a {
+.publicity>a {
     font-style: italic;
 }
 /* Footer  */
@@ -136,12 +141,12 @@ footer {
     border: 2px solid #000;
     position: relative;
     padding: 10px;
-    margin-top: 5px;
-    /* clear: both; */
+    clear: both;
 }
 footer a{
     padding-left: 10px;
     text-transform: uppercase;
+    
 }
 /* Footer copiright */
 .footer-2 {
@@ -149,5 +154,4 @@ footer a{
     right: 1%;
     top: 50%;
     margin-top: -21px;
-    
 }
