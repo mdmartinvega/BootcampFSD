@@ -10,6 +10,10 @@
     display: none;
 }
 
+p::first-letter {
+    font-size: 2em;
+}
+
 /* Para volver la clase y el p de tipo bloack a inline, seleccionamos */
 /* tanto las clases del div como los parrafos de dentro */
 .box-5, .box-6, .box-5 p, .box-6 p  {

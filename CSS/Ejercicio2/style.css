@@ -1,11 +1,11 @@
 div {
-    border: 2px solid rgb(128, 128, 128);
-    width: 35%;
+    border: 1px solid #808080;
+    /* width: 35%; */
     margin: auto;
-    background-color: rgb(207, 206, 206);
+    background-color: #ebebeb;
     overflow: hidden;
-    padding: 15px 5px; 
-    min-width: 200px;
+    padding: 10px; 
+    /* min-width: 200px; */
 }
 .p1 {
     float: right;

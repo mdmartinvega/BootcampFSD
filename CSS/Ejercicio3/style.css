@@ -1,24 +1,25 @@
 ul {
-    width: 200px;
+    width: 40%;
     cursor: pointer;
     list-style-position: inside;
-    list-style-image: url(Images/avance-rapido.png);
+    list-style-image: url(Images/avance-rapido.png);  
+    padding: 0px;
 }
 
 li {
     border: 1px solid #808080;
-    background-color: #e7e7e7;
-    padding: 5px;
-}
-li:hover {
-    list-style-image: url(Images/avance-rapido\(1\).png);
-    font-weight: bold;
-    background-color: #b3b3b3;
-}
-
-a {
+    background-color: #f0f0f0;
+    padding: 4px;
+    box-shadow: 1px 2px #888888;
     color: #000;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
 }
+li:hover {
+    list-style-image: url(Images/avance-rapido\(1\).png);
+    /* font-weight: bold; */
+    background-color: #b3b3b3;
+}
+
+
+
