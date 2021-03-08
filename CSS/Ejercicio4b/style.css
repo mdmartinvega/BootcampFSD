@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+.contener-1 {
+    border: 1px solid #808080;
+    padding: 5px;
+}
+.logo {
+    position: relative;
+}
+
+form {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -17px;
+}
+
+.nav-1 a {
+    text-decoration: none; 
+}
+
+aside {
+    width: 20%;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.link-rel {
+    display: block;
+}
+
+.main {
+    float: right;
+    width: 76%;
+}
+.main-1 {
+    float: left;
+    width: 76%;
+}
+
+.main-2 {
+    float: right;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+    position: relative;
+}
+footer p {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+
+}
+
