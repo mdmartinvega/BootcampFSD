@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: indigo;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    background-color: indigo;
+}
+
+nav a:last-child {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    nav a {
+        float: left;
+        width: 25%;
+    }
+}
+/* 
+@media only screen and ( min-width: 900px) {
+    nav a {
+        width: 20%;
+    }
+    nav a:last-child {
+        display: block;
+    }
+} */
