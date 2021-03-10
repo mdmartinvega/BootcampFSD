@@ -1,6 +1,6 @@
 
 
-/* Tipos de Display: none, inline, block, inline-block */
+/* Tipos de Display: none, inline, block, inline-block
 
 /* Aplicamos valores para clases que empiezan por box */
 [class^=box] {
@@ -23,7 +23,7 @@ p::first-letter {
 /* Para convertir elementos a inline pero con ciertas características de  */
 /* block como márgenes */
 
-.box-3, .box-4, .box-3 p, .box-4 p {
+/* .box-3, .box-4, .box-3 p, .box-4 p {
     display: inline-block;   
 }
 
@@ -31,33 +31,33 @@ p::first-letter {
     background-color: teal;
     height: 50px;
     width: 25%;
-}
+} */
 
 /* Centrar horizontalmenete. Eje x */
 
-.x-centered {
+/* .x-centered {
     margin: auto;
-}
+} */
 
 /* Posición relativa */
 
-.post-relative {
+/* .post-relative {
     position: relative;
     top: -70px;
     z-index: -1;
-}
+} */
 
 /* Posición absoluta */
 
-.post-absolute-parent {
+/* .post-absolute-parent {
     height: 300px;
     border: 15px solid tomato;
     position: relative;
-}
+} */
 
 /* Hay que quitarle left y top de la mitad del cuadrado para poder centrarlo ya  */
 /* que el % empuja desde la posición */
-.post-absolute-child {
+/* .post-absolute-child {
     height: 50px;
     width: 50px;
     background-color: #333;
@@ -86,12 +86,12 @@ p::first-letter {
     text-decoration: none;
     
     
-}
+} */
 
 /* Posición sticky */
 /* Para fijar la barra de navegación cuando el scroll lega a ella */
 
-.post-sticky {
+/* .post-sticky {
     background-color: steelblue;
     padding: 15px 25px;
     position: sticky;
@@ -100,7 +100,7 @@ p::first-letter {
 .post-sticky>a {
     text-decoration: none;
     color: white;
-}
+} */
 
 /* Posicionamiento flotante: divs dentro de otros divs */
 /* Overflow: hidden para evitar eldesbordamiento de los hijos */
@@ -108,7 +108,7 @@ p::first-letter {
 /* Clear: both permite que se comience en una nueva línea sin ocupar el espacio */
 /* de los elementos flotantes */
 
-.post-float-parent {
+/* .post-float-parent {
     border: 5px solid orange;
     overflow: hidden;
 }
@@ -128,8 +128,8 @@ p::first-letter {
     float: right
     
     
-}
-
+} */
+/* 
 .post-float-child-3 {
     background-color: cornflowerblue;
     height: 100px;
@@ -148,27 +148,27 @@ p::first-letter {
 /* Gestión del desbordamiento del contenido */
 /* Hidden: oculta el desbordamiento */
 
-[class^="overflow-parent"] {
+/* [class^="overflow-parent"] {
     width: 200px;
     height: 100px;
     border: 3px dashed black;
     margin-bottom: 80px;
 
-}
-
+} */
+/* 
 .overflow-parent-1 {
     overflow: hidden;
 }
 .overflow-parent-2 {
-    overflow: visible;
+    overflow: visible; */
 }
-.overflow-parent-3 {
+/* .overflow-parent-3 {
     overflow: scroll;
-}
+} */
 
 /* Box-sizing */
 
-.box-sizing-parent {
+/* .box-sizing-parent {
     height: 200px;
     width: 200px;
     border: 10px solid orange;
@@ -180,14 +180,14 @@ p::first-letter {
     background-color: grey;
     border: 10px solid darkolivegreen;
     /* Por defecto */
-    box-sizing: content-box;
-}
+    /* box-sizing: content-box;
+} */
 
 .border-box {
     margin-top: 10px;
     box-sizing: border-box;
 
-}
+} */ */
 
 /* @media queries */
 
@@ -210,4 +210,11 @@ p::first-letter {
     .responsive {
         width: 100%;
     }
+}
+
+/* Flexbox */
+
+.flex-parent {
+    display: flex;
+    flex-direction: row-reverse;
 }

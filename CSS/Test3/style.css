@@ -1,0 +1,52 @@
+/* Flexbox */
+
+
+/* Cuando ponemos flex-wrap la altura respeta la del padre */
+.flex-parent {
+    display: flex;
+    height: 250px;
+    /* wrap y direction */
+    /* flex-flow: row wrap;  */
+    /* flex-wrap: nowrap;
+    flex-direction: row; */
+    justify-content: center;
+    align-items: stretch;
+    border: 8px solid grey;
+
+}
+
+/* Aquí convertimos a los hijos tb a flex */
+[class^="flex-child"] {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.flex-parent>div:nth-child(odd) {
+    background-color: #333;
+    color: #ddd;
+}
+
+.flex-parent>div:nth-child(even) {
+    background-color: #ddd;
+    color: #333;
+}
+
+.flex-child2 {
+    flex-grow: 1;
+    flex-shrink: 2;
+    /* align-self: baseline; */
+}
+
+.flex-child3 {
+    flex-grow: 2;
+    flex-shrink: 3;
+    flex-basis: auto;
+/* Se puede poner como flex: 2 3 auto  */
+
+}
+
+
+
