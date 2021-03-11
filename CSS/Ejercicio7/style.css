@@ -30,8 +30,6 @@ section {
     flex-direction: column;
     border-radius: 5%;
     row-gap: 20px;   
-    flex-grow: 1;
-    justify-content: flex-end; 
 }
 .box-container {
     border-radius: 5%; 
@@ -45,7 +43,7 @@ footer {
     align-items: center;
     row-gap: 10px;
     flex-grow: 2;
-    justify-content: flex-end;
+    justify-content: flex-end; 
     padding-bottom: 20px;
 }
 
