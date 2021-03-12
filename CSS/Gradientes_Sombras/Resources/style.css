@@ -1,0 +1,32 @@
+
+[class^="gradient"] {
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.gradient-1 {
+   background: linear-gradient(to right, darkblue, aquamarine); 
+}
+
+/* Manipular degradado con porcentaje y tres colores */
+.gradient-2 {
+    background: linear-gradient(to bottom, orange, red 50%, orange); 
+ }
+
+ .gradient-3 {
+    background: linear-gradient(to bottom, rgba(255,255, 255, 0), rgba(255, 255, 255, 1)), url(../../Ejercicio_4/NationalGeographic/Images/frigiliana.jpeg); 
+    background-repeat: no-repeat;
+    height: 500px;
+ }
+
+ .gradient-4 {
+    background: radial-gradient(rgb(196, 130, 9), rgb(158, 7, 125), rgb(201, 7, 88)); 
+ }
+
+ .gradient-5 {
+     background-color: rgb(2, 61, 2);
+     width: 50%;
+     /* Primer px a la derecha segundo la mueve y tercera radio de desenfoque */
+     /* offset-x/offset-y/radio desemfoque */
+     box-shadow: 5px 10px 15px black;
+ }

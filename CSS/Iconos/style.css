@@ -1,0 +1,9 @@
+/* <h2>Iconos</h2> */
+
+i:nth-child(odd) {
+    color: orangered;
+}
+
+i:nth-child(even) {
+    color: rgb(7, 7, 7);
+}

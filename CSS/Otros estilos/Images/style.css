@@ -1,0 +1,58 @@
+
+/* <h2>Transformaciones</h2> */
+.transform {
+    background-color: rgb(156, 49, 49);
+    height: 200px;
+    width: 200px;
+    transform: translate(300px, 10px) rotate(45deg) scale(0.9) skew(60deg)
+}
+
+/* <h2>Transiciones</h2> */
+.transitions {
+    margin-left: 50px;
+    background-color: darkcyan;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+
+
+    /* transition-property: transform;
+    transition-duration: 0.5s; */
+    /* Transición entre los dos estados */
+    /* transition-delay: 1s; */
+    /* transition-timing-function: ease-in-out; */
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.transitions:hover {
+    transform: scale(1.9) rotate(3deg);
+}
+
+/* <h2>Animaciones</h2> */
+
+.text_animation {
+    font-size: 1.5em;
+    color: tomato;
+    animation-name: slidein;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    overflow-x: hidden;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    50% {
+        margin-left: 0%;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+

@@ -1,0 +1,95 @@
+
+.contener {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: 10px;
+    height: 420px;
+    width: 420px;
+    margin: auto;
+}
+
+[class^="box"] {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(1, 71, 99);
+
+    
+}
+
+[class^="box"]:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+[class^="box"] {
+    animation-name: appear;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(16);
+}
+
+.box-1 {
+    animation-delay: 1;
+    animation-name: appear;
+}
+.box-2 {
+    animation-delay: 2;
+    animation-name: appear;
+}
+.box-3 {
+    animation-delay: 3;
+    animation-name: appear;
+}
+.box-4 {
+    animation-delay: 4;
+    animation-name: appear;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+.box-1 {
+    animation-delay: 1;
+}
+
+@keyframes appear {
+    from {
+        background-color: rgba(1, 71, 99,0);
+        margin-right: 100%;
+    }
+    50% {
+        background-color: rgb(1, 71, 99);
+    }
+    to {
+        background-color: rgb(1, 71, 99);
+    }
+}
