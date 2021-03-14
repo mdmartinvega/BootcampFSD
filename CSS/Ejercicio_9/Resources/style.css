@@ -3,93 +3,85 @@
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     gap: 10px;
-    height: 420px;
-    width: 420px;
+    height: 850px;
+    width: 850px;
     margin: auto;
 }
 
 [class^="box"] {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(1, 71, 99);
+    height: 200px;
+    width: 200px;  
+    background-color: rgba(1, 71, 99);
+    opacity: 0;
 
-    
+    animation-name: cambiarColor;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 [class^="box"]:hover {
     transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-}
-
-[class^="box"] {
-    animation-name: appear;
-    animation-duration: 16s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(16);
+    transition: transform 0.5s ease-in-out;
 }
 
 .box-1 {
-    animation-delay: 1;
-    animation-name: appear;
+    animation-delay: 3s;
 }
 .box-2 {
-    animation-delay: 2;
-    animation-name: appear;
+    animation-delay: 2s;
 }
 .box-3 {
-    animation-delay: 3;
-    animation-name: appear;
+    animation-delay: 1s;
 }
 .box-4 {
-    animation-delay: 4;
-    animation-name: appear;
+    animation-delay: 0s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-5 {
+    animation-delay: 7s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-6 {
+    animation-delay: 6s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-7 {
+    animation-delay: 5s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-8 {
+    animation-delay: 4s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-9 {
+    animation-delay: 11s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-10 {
+    animation-delay: 10s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-11 {
+    animation-delay: 9s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-12 {
+    animation-delay: 8s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-13 {
+    animation-delay: 15s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-14 {
+    animation-delay: 14s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-15 {
+    animation-delay: 13s;
 }
-.box-1 {
-    animation-delay: 1;
+.box-16 {
+    animation-delay: 12s;
 }
 
-@keyframes appear {
+@keyframes cambiarColor {
     from {
-        background-color: rgba(1, 71, 99,0);
-        margin-right: 100%;
+        opacity: 0;
+
     }
-    50% {
-        background-color: rgb(1, 71, 99);
-    }
+    /* 50% {
+        opacity: 0.5;
+    } */
     to {
-        background-color: rgb(1, 71, 99);
+        opacity: 1;
     }
 }
