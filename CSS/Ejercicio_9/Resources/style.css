@@ -1,7 +1,7 @@
 
 .contener {
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-template: repeat(4, 200px) / repeat(4, 200px);
     gap: 10px;
     height: 850px;
     width: 850px;
@@ -9,14 +9,15 @@
 }
 
 [class^="box"] {
-    height: 200px;
-    width: 200px;  
+
     background-color: rgba(1, 71, 99);
     opacity: 0;
 
-    animation-name: cambiarColor;
+    animation: appear 2s ease 0.5s 1 normal forwards;
+
+    /* animation-name: appear;
     animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 }
 
 [class^="box"]:hover {
@@ -73,7 +74,7 @@
     animation-delay: 12s;
 }
 
-@keyframes cambiarColor {
+@keyframes appear {
     from {
         opacity: 0;
 
