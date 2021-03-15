@@ -1,15 +1,37 @@
 
 * {
-  font-family: Inter;
-  margin: 0;
+  font-family: Inter, system-ui, Roboto, Helvetica, Arial;
   box-sizing: border-box;
+  
 }
 
+:root {
+  --purple-light: #7e3af2;
+  --purple-dark: #6c2bd9;
+  --orange-light: #feecdc;
+  --orange-dark: #ff5a1f;
+  --blue-light: #e1effe;
+  --blue-dark: #3f83f8;
+  --green-light: #def7ec;
+  --green-dark: #0e9f6e;
+  --teal-light: #d5f5f6;
+  --teal-dark: #0694a2;
+  --red-light: #fde8e8;
+  --red-dark: #e02424;
+  --gray-light: #f4f5f7;
+  --gray-dark: #24262d;
+
+  }
+  
+
 body {
-  background-color: rgb(223, 223, 223);
+  background-color: var(--gray-light);
 }
 
 .styles {
+  background-color: #fff;
+  border: 3px solid #f4f5f7;
+  border-radius: 8px;
 }
 
 /* Login */
@@ -17,16 +39,18 @@ body {
 /* Tarjeta principal */
 .login {
   background-color: #fff;
-  width: 90%;
-
+  width: 75%;
+  margin: 5vh auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px #cacaca;
+  
 }
 /* Imagen */
 .image {
   background-image: url(Images/FotoLogin2.jpg);
   background-size: cover;
-  height: 140px;
+  height: 20vh;
   background-position: center center;
-  padding: 0;
 }
 
 /* Formulario Login */
@@ -34,34 +58,92 @@ body {
 .form {
   background-color: #fff;
   width: 100%;
-  margin: auto;
+  padding: 20px;
+
+}
+
+.form h3 {
+  padding: 5px;
 }
 
 .form label,
 .form input {
   display: block;
   background-color: #fff;
+  width: 100%;
 }
 
 .form input {
-  border-radius: 5px;
+  padding: 7px;
+  margin-bottom: 10px;
 }
 
-.form a {
-  text-decoration: none;
-  display: block;
-  margin-top: 5px;
+.form label {
+  padding: 5px; 
 }
 
-.submit {
-  width: 90%;
-  margin-top: 15px;
-  padding: 5px;
+.submitInput {
+  width: 100%;
+  background-color: var(--purple-dark);
+  padding: 7px;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.submitInput hr {
+  color: var(--gray-light)
+}
+
+.submitInput:hover {
+  cursor: pointer;
 }
 
 .submit2 {
-  width: 90%;
+  width: 100%;
   margin-top: 15px;
+  padding: 7px;
+  font-weight: bold;
+}
+.submit2:hover {
+  cursor: pointer;
+}
+
+.submit2 i {
+  margin-right: 5px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.form a {
+  text-decoration: none;
+  padding: 5px;
+  color: var(--purple-light);
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 700px) {
+
+  .login {
+    display: flex;
+  }
+
+  .image {
+    background-image: url(../Resources/Images/FotoLogin1.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 50%;
+    height: 65vh;
+  }
+
+  .form {
+    width: 50%;
+  }
+
+
 }
 
 

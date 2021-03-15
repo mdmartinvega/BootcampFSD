@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Resources/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2829813478.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,18 +18,22 @@
         <div class="image">
 
         </div>
-        <div class="form styles">
+        <div class="form">
             <h3>Login</h3>
-            <form action="text" method="get" class="styles">
+            <form action="text" method="get">
                 <label for="EmailInput">Email</label>
-                <input class="label" type="email" name="email" id="EmailInput" placeholder="Jane Doe">
+                <input class="label styles" type="email" name="email" id="EmailInput" placeholder="Jane Doe">
                 <label for="PasswordInput">Password</label>
-                <input class="label" type="password" name="password" id="PasswordInput" placeholder="***********">
-                <input class="submit margin" type="submit" value="Log in">
-            </form><hr>
-            <button class="submit2"><i class="fab fa-github"></i>Github</button>
-            <button class="submit2"><i class="fab fa-twitter"></i>Twitter</button>
-            <a href="">Forgot your password?</a><a href="">Create account</a>
+                <input class="label styles" type="password" name="password" id="PasswordInput" placeholder="*******************">
+                <button class="submitInput styles" type="submit" value="Log in">Log in</button><hr>
+                <button class="submit2 styles"><i class="fab fa-github"></i>Github</button>
+                <button class="submit2 styles"><i class="fab fa-twitter"></i>Twitter</button>
+            </form>
+            
+            <div class="links">
+                <a href="">Forgot your password?</a>
+                <a href="">Create account</a>
+            </div>
 
         </div>
     </main>
