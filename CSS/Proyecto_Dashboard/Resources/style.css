@@ -22,7 +22,6 @@
   --gray-dark: #24262d;
 
   }
-  
 
 body {
   background-color: var(--gray-light);
@@ -38,19 +37,19 @@ body {
 
 /* Tarjeta principal */
 .login {
-  background-color: #fff;
-  width: 75%;
+  width: 70%;
   margin: 5vh auto;
-  border-radius: 10px;
   box-shadow: 2px 2px 15px #cacaca;
-  
+  height: 500px;
+  border-radius: 10px;
 }
 /* Imagen */
 .image {
   background-image: url(Images/FotoLogin2.jpg);
   background-size: cover;
-  height: 20vh;
+  height: 18vh;
   background-position: center center;
+  background-color: transparent;
 }
 
 /* Formulario Login */
@@ -59,7 +58,7 @@ body {
   background-color: #fff;
   width: 100%;
   padding: 20px;
-
+  
 }
 
 .form h3 {
@@ -123,11 +122,13 @@ body {
   padding: 5px;
   color: var(--purple-light);
   font-weight: bold;
+  font-size: 0.8em;
 }
 
 @media only screen and (min-width: 700px) {
 
   .login {
+    width: 700px;
     display: flex;
   }
 
@@ -136,7 +137,7 @@ body {
     background-size: cover;
     background-position: center center;
     width: 50%;
-    height: 65vh;
+    height: 100%;
   }
 
   .form {
