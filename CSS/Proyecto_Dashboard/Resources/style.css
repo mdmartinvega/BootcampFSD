@@ -139,13 +139,134 @@ body {
     width: 50%;
     height: 100%;
   }
-
   .form {
     width: 50%;
   }
-
-
 }
+
+/* Index */
+body {
+  margin: 0;
+}
+
+/* Navegador */
+.navigator {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 3px solid var(--gray-light);
+  background-color: #fff;
+  align-items: center;
+  padding: 8px;
+}
+.navigator input {
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  padding: 5px;
+  flex-grow: 0.5;
+  border: 2px solid var(--gray-light);
+}
+
+input::placeholder {
+  font-family: FontAwesome, Inter;
+  color: var(--purple-dark);
+}
+i {
+  color: var(--purple-dark);
+  cursor: pointer;
+}
+nav img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Main */
+
+main {
+  padding: 20px;
+}
+/* View More */
+
+.viewmore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--purple-dark);
+  color: #fff;
+  border-radius: 8px;
+  padding: 3px;
+}
+.viewmore i {
+  color: #fff;
+  padding: 5px;
+}
+.viewmore1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.viewmore2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section */
+
+[class^="container"] {
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  background-color: #fff;
+  /* display: flex;
+  align-items: center; */
+  padding-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+
+/* Iconos */
+[class^="container"] i {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+}
+.container-1 i {
+  color: var(--orange-dark);
+  background-color: var(--orange-light);  
+}
+.container-2 i {
+  color: var(--green-dark);
+  background-color: var(--green-light);
+}
+.container-3 i {
+  color: var(--blue-dark);
+  background-color: var(--blue-light);
+}
+.container-4 i {
+  color: var(--teal-dark);
+  background-color: var(--teal-light);
+}
+/* Section párrafos */
+
+[class^="container"] p:nth-child(2) {
+  font-weight: bold;
+}
+
+/* Tabla */
+
+table {
+  border: 3px solid var(--gray-light);
+  background-color: #fff;
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+
+
 
 
 
