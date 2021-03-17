@@ -1,4 +1,7 @@
-div {
+.sized {
+    height: 100px;
+}
+#mi-container {
     background-color: red;
     a {
         color:white;
@@ -6,4 +9,5 @@ div {
     button {
         height: 100%;
     }
+   
 }

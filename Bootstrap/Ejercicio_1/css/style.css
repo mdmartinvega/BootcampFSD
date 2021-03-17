@@ -1,0 +1,16 @@
+[class^="carousel-item"] {
+    height: 50vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url(../Images/coche1.jpeg);
+}
+.carousel-item:nth-child(2) {
+    background-image: url(../Images/coche2.jpeg);
+}
+.carousel-item:nth-child(3) {
+    background-image: url(../Images/coche3.jpeg);
+
+}
