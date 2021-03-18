@@ -271,19 +271,25 @@ table {
   background-color: #fff;
   width: 100%;
   border-radius: 8px;
+  border-collapse: collapse;
+  border: 3px solid #f0f0f0;
+  border-radius: 10px;
+  
 }
 
 /* Cabecero tabla */
 table th {
   text-align: left;
-  color: #a5a5a5;
+  color: var(--gray-medium);
   padding: 10px;
   background-color: var(--gray-light);
 }
 
 table td {
-  border-top: 3px solid var(--gray-light);
+  border-bottom: 3px solid var(--gray-light);
+  padding: 0px;
 }
+
 .person {
   display: flex;
   align-items: center;
@@ -338,10 +344,16 @@ tr:nth-child(5) td:nth-child(3) p {
 }
 
 /* Footer de la tabla */
-tfoot {
-  background-color: var(--green-light);
+footer {
+  background-color: var(--gray-light);
+  padding: 5px;
+  border: 3px solid #f0f0f0;
+  border-top: none;
+  border-radius: 10px;
+  
 }
-tfoot th {
+.footer-1 {
+  font-weight: bold;
   color: var(--gray-medium);
 }
 
@@ -355,17 +367,18 @@ tfoot th {
   color: var(--gray-medium);
 }
 
-.icon p:nth-child(4) {
-  
-  padding: 5px 10px;
-  border-radius: 5px;
-  box-sizing: content-box;
-}
-
 .icon p {
   margin: 15px;
   color: var(--gray-medium);
+  padding: 5px;
   cursor: pointer;
+}
+
+.icon p:hover {
+  background-color: var(--purple-dark);
+  color: #fff;
+  border-radius: 5px;
+  
 }
 
 @media only screen and (min-width: 850px) {
@@ -382,7 +395,6 @@ tfoot th {
     grid-template: 1fr / 300px 2fr;
   }
   aside {
-    padding-left:20px;
     background-color: #fff;
     grid-column: 1;
     display: block;
@@ -400,23 +412,45 @@ tfoot th {
     display: flex;
     align-items: center;
     cursor: pointer;
+    padding-left: 20px;
   }
-  li i {
+  .icon-aside {
+    width: 17px;
+  }
+  .icon-aside i {
     color: var(--gray-medium);
   }
 
   li p {
-    padding-left: 10px;
+    padding-left: 25px;
+    font-weight: bold;
+    color: var(--gray-medium);
   }
+
+  li:hover .icon-aside i:hover{
+    border-left: 5px solid var(--purple-dark);
+    color: #24262d;
+  }
+
+  }
+  li p:hover {
+    color: #24262d;
+    
+  }
+
+
   .product {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
     background-color: var(--purple-light);
-    color: #fff;
     border-radius: 10px;
     padding-right: 10px;
+  }
+  .product p {
+    color: #fff;
+    font-weight: normal;
   }
   .product i {
     color: #fff;
@@ -427,6 +461,12 @@ tfoot th {
   }
   .navigator i:first-child {
     display: none;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   /* Sección iconos */
