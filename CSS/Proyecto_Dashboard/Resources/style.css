@@ -202,6 +202,7 @@ aside {
   background-color: var(--gray-light);
   width: 100%;
   padding: 5px 0 5px 35px;
+  border-radius: 5px;
 }
 .search input::placeholder {
   font-family: FontAwesome, Inter;
