@@ -522,8 +522,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-
+@media only screen and (min-width: 1150px) {
   /* Navegador */
   .search {
     margin: 0 20%;
@@ -538,6 +537,16 @@ footer {
   [class^="container"] {
     width: 90%;
     margin-right: 5px;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  main {
+    width: 1300px;
+    margin: auto;
+  }
+  .search {
+    margin: 0 30%;
   }
 }
 
