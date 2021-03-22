@@ -355,19 +355,23 @@ table td {
   font-weight: bold;
   padding: 8px 10px;
   border-radius: 15px;
-  width: fit-content;
+  
 }
+
 .approved {
   background-color: var(--green-light);
   color: var(--green-dark);
+  width: 100px;
 }
 .expired {
   background-color: var(--gray-light);
   color: var(--gray-dark);
+  width: 80px;
 }
 .denied {
   background-color: var(--red-light);
   color: var(--red-dark);
+  width: 75px;
 }
 
 /* -------------------- Footer -----------------*/
@@ -541,13 +545,14 @@ footer {
 }
 
 @media only screen and (min-width: 1550px) {
+  .navigator {
+    justify-content: space-between;
+  }
   main {
     width: 1300px;
     margin: auto;
   }
-  .search {
-    margin: 0 30%;
-  }
+  
 }
 
 
