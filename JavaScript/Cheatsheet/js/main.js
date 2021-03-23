@@ -448,5 +448,23 @@ numbersArray.forEach(function (value, index){
     console.log(`Índice ${index} : ${value}`);
 });
 
+const getSleepHours = day => {
+    if (day === 'monday') {
+      return 8;
+    } else if (day === 'tuesday') {
+      return 7;
+    } else if (day === 'wednesday') {
+      return 6;
+    } else if (day === 'thursdayy') {
+      return 8;
+    } else if (day === 'friday') {
+      return 7;
+    } else if (day === 'saturday') {
+      return 9;
+    } else (day === 'sunday') {
+      return 10;
+    }
+  };
+
 
 

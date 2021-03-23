@@ -40,7 +40,6 @@ body {
   width: 70%;
   margin: 15vh auto;
   box-shadow: 2px 2px 15px #cacaca;
-  border-radius: 10px;
   padding: 0;
 }
 /* Image */
@@ -95,7 +94,6 @@ body {
   width: 100%;
   margin-top: 15px;
   padding: 7px;
-  font-weight: bold;
 }
 .submit2 i {
   margin-right: 5px;
@@ -112,7 +110,6 @@ body {
   text-decoration: none;
   padding: 5px;
   color: var(--purple-light);
-  font-weight: bold;
   font-size: 0.8em;
 }
 
@@ -150,15 +147,24 @@ body {
   margin: 0;
 }
 /* Generic styles */
-.p-10 {
-  padding: 10px;
+.p-10 {padding: 10px;}
+.p-5 {padding: 5px;}
+.pointer {cursor: pointer;}
+.bg-white {background-color: #fff;}
+.color-white {color: #fff;}
+.bold {font-weight: bold;}
+.typical-display {
+  display: flex;
+  align-items: center;
 }
-.p-5 {
-  padding: 5px
+.typical-display-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pointer {
-  cursor: pointer;
-}
+.bg-gray-light {background-color: var(--gray-light);}
+.color-gray-medium {color: var(--gray-medium);}
+.radius {border-radius: 10px;}
 
 /* Aside */
 aside {
@@ -167,11 +173,8 @@ aside {
 
 /* -------------------------Navigator-------------------- */
 .navigator {
-  display: flex;
   justify-content: space-evenly;
   box-shadow: 5px 2px 5px rgb(202, 202, 202);
-  background-color: #fff;
-  align-items: center;
 }
 .navigator i {
   color: var(--purple-light);
@@ -186,9 +189,7 @@ aside {
 
 /* Searcher */
 .search {
-  background-color: var(--gray-light);
   position: relative;
-  border-radius: 5px;
   flex-grow: 0.8;
   margin-left: 10px;
 }
@@ -199,10 +200,8 @@ aside {
 }
 .search input {
   border: none;
-  background-color: var(--gray-light);
   width: 100%;
   padding: 5px 0 5px 35px;
-  border-radius: 5px;
 }
 .search input::placeholder {
   font-family: FontAwesome, Inter;
@@ -215,22 +214,18 @@ aside {
 }
 /* Bell and image */
 .bell-image {
-  display: flex;
-  align-items: center;
   width: 100px;
   position: relative;
   justify-content: space-around;
 }
+.bell-image .fa-circle {
+  color: var(--red-dark);
+  font-size: 10px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
 
-.circle {
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color: red;
-position: absolute;
-top: 8px;
-left: 20px;
-} 
 .bell-image img {
   border-radius: 50%;
 }
@@ -239,39 +234,17 @@ left: 20px;
 main {
   padding: 10px 20px 25px 20px;
 }
-main h2 {
-  margin-bottom: 10px 0px;
-}
 
 /* View More */
 .viewmore {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: var(--purple-light);
-  color: #fff;
-  border-radius: 8px;
   padding: 0 5px;
-}
-.viewmore i {
-  color: #fff;
-}
-.viewmore1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.viewmore2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* ------------------- Icons Section ----------------- */
 [class^="container"] {
   border: 2px solid #f0f0f0;
-  border-radius: 8px;
-  background-color: #fff;
   padding-left: 15px;
   margin: 15px 0;
   display: grid;
@@ -304,25 +277,17 @@ main h2 {
   color: var(--teal-dark);
   background-color: var(--teal-light);
 }
-[class^="container"] p:nth-child(2) {
-  font-weight: bold;
-}
 
 /* -------------------- Table section ---------------- */
 table {
-  background-color: #fff;
   width: 100%;
-  border-radius: 8px;
   border-collapse: collapse;
   border: 3px solid #f0f0f0;
-  border-radius: 10px;
 }
 
 /* Header Table */
 table th {
   text-align: left;
-  color: var(--gray-medium);
-  background-color: var(--gray-light);
 }
 table th:first-child {
   padding: 10px;
@@ -330,11 +295,12 @@ table th:first-child {
 table td {
   border-bottom: 3px solid var(--gray-light);
 }
+table tr:hover {
+  background-color: var(--gray-light);
+}
 
 /* Client */
 .person {
-  display: flex;
-  align-items: center;
   padding-left: 5px;
 }
 .person img {
@@ -343,64 +309,37 @@ table td {
   border-radius: 50%;
   display: none;
 }
-.person p {
-  margin-left: 5px;
-}
-.person p:first-child {
-  font-weight: bold;
-}
 
 /* Status */
 .status {
-  font-weight: bold;
   padding: 8px 10px;
   border-radius: 15px;
-  
+  width: fit-content;
 }
-
 .approved {
   background-color: var(--green-light);
   color: var(--green-dark);
-  width: 100px;
 }
 .expired {
-  background-color: var(--gray-light);
   color: var(--gray-dark);
-  width: 80px;
 }
 .denied {
   background-color: var(--red-light);
   color: var(--red-dark);
-  width: 75px;
 }
 
 /* -------------------- Footer -----------------*/
 footer {
-  background-color: var(--gray-light);
   padding: 10px 20px;
   border: 3px solid #f0f0f0;
   border-top: none;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-/* Showing */
-.footer-1 {
-  font-weight: bold;
-  color: var(--gray-medium);
-}
+
 /* Pagination */
-.footer-2 {
-  display: flex;
-  align-items: center;
-  color: var(--gray-medium);
-}
-.footer-2 i {
-  color: var(--gray-medium);
-}
 .footer-2 p {
   margin: 10px;
-  color: var(--gray-medium);
-  cursor: pointer;
   padding: 3px;
 }
 .footer-2 p:hover {
@@ -411,38 +350,26 @@ footer {
 }
 
 @media only screen and (min-width: 820px) {
-
   .body-2 {
     display: grid;
     grid-template: 1fr / 250px 2fr; 
   }
-
   aside {
-    background-color: #fff;
     grid-column: 1;
     display: block;
   }
-  .start {
-    display: flex;
-    align-items: center;
-  }
   .start img {
-    height: 20px;
+    height: 25px;
     margin-right: 5px;
   }
   .start {
-    cursor: pointer;
     padding-left: 25px;
   }
   .icon-aside {
-    display: flex;
-    align-items: center;
     border: 5px solid #fff;
     cursor: pointer;
-    font-weight: bold;
     padding-left: 15px;
     width: 100%;
-    color: var(--gray-medium);
   }
   .icon-aside:hover {
     border-left: 5px solid var(--purple-dark);
@@ -457,21 +384,13 @@ footer {
  
   /* Add product */
   .product {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 90%;
     background-color: var(--purple-light);
-    border-radius: 10px;
     padding: 0px 15px;
     margin: 15px auto;
-    cursor: pointer;
-  }
-  .product p {
-    color: #fff;
   }
   .product i {
-    color: #fff;
     font-size: 0.6em;
   }
 
