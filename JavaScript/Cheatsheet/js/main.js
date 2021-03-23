@@ -149,7 +149,10 @@ let person = {
     },// Pre ES6
     jump() { //Función
         console.log("Hey, estoy saltando");
-    }//ES6
+    }, //ES6
+    presentarse() {
+        console.log(`Me llamo ${this.name} tengo ${this.age} años y ${this.blonde ? 'soy rubio' : 'soy moreno'}` );
+    }
 }
 
 
@@ -170,12 +173,12 @@ console.log(person[nombreDeLaPropiedadQueQuiero]);
 //Ampliación
 
 
-// person = {
+//     person = {
 //     name: "John",
 //     age: 30,
 //     blonde: false,
-//     children:[]
-// } No hacer así
+//    children:[]
+//  } No hacer así
 
 person.children = ["Martha", "Peter"];
 console.log(person);
@@ -300,4 +303,150 @@ if (randomNumber === guessedNumber) {
 } else {
     console.log("El número secreto es menor");
 }
+
+//Ternary operator ------------------
+let variable = 12 < 10 ? "El primero es menor" : "El primero es mayor";
+console.log(variable);
+
+person.presentarse();
+
+// Switch case
+
+let option = 4;
+switch (option) {
+    case 1:
+        console.log("Option vale 1");
+        break;
+    case 2:
+        console.log("Option vale 2");
+        break;
+    case 3:
+        console.log("Option vale 3");
+        break;
+    default:
+        console.log("Option no vale nada");
+        break;
+}
+
+console.clear();
+//----------------- Funciones --------------------------
+
+//Nombradas
+
+function greet(name, lastName) {
+    console.log(`Hola, ${name} ${lastName}. Qué tal?`);
+}
+
+greet();
+greet("Marcos", "Aurelio");
+
+
+function greet(name, lastName) {
+    return `Hola, ${name} ${lastName}. Qué tal?`;
+}
+
+console.log();(greet("Marcos", "Aurelio"));
+
+
+//Que devuelva el cuadrado de un número
+
+function square(num) {
+    let square = num * num;
+    return `El cuadrado de ${num} es ${square}`; //Rompe y para la función. 
+    return "";
+}
+console.log(square(3));
+console.log(square(12));
+console.log(square(option)); //variable de arriba
+
+//Anónimas
+let numbersArray = [5, 51, 1, 15, 2];
+console.log(numbersArray);
+numbersArray.sort(); //Ordenado con ASCII
+console.log(numbersArray);
+
+//Ascendente
+function orderNumbers(a, b) {
+    if (a < b) {
+        return -1;
+    } else if (a === b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+numbersArray.sort(orderNumbers);
+console.log(numbersArray);
+
+//Descendente
+numbersArray.sort(function (a, b) {return b - a});
+
+console.log(numbersArray);
+
+//Funciones de flecha
+
+let perimeterOfSquare = function (side) { //Función anónima
+    return side * 4;
+}
+perimeterOfSquare = function (side) {return side * 4};
+perimeterOfSquare = (side) => {return side * 4};
+perimeterOfSquare = (side) => side * 4;
+perimeterOfSquare = side => side * 4;
+
+console.log(perimeterOfSquare(5));
+
+console.log(typeof function() {});
+console.log(typeof (() => {}));
+
+//De función anónima a función de flecha
+
+numbersArray.sort(function(a,b) {return a - b});
+numbersArray.sort((a,b) => a - b); 
+
+//Otra
+
+let square2 = num => num * num;
+console.log(square2(5));
+
+
+// ----------------------- Bucles -----------------------------
+
+for (let i= 0; i <= 10; i++) {
+    console.log(`Ìndice: ${i}`);
+}
+
+
+//Definir y rellenar un array con el índice i
+
+const arrayX = [];
+
+for (let i= 0; i <= 10; i++) {
+    arrayX.push(i);
+}
+
+console.log(arrayX);
+
+//While
+
+let contador = 0;
+while (contador <= 10) {
+    console.log(contador);
+    contador++;
+}
+
+// while (1==1) {
+//     break;
+// }
+
+// console.log("Hola");
+
+// ForEach (Solo para arrays)
+
+console.log(numbersArray);
+numbersArray.forEach(function (value, index){
+    console.log(`Índice ${index} : ${value}`);
+});
+
+
 
