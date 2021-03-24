@@ -441,30 +441,73 @@ while (contador <= 10) {
 
 // console.log("Hola");
 
-// ForEach (Solo para arrays)
+// ForEach (Solo para arrays) Podemos especificar
+//los parámetros que queremos
 
 console.log(numbersArray);
-numbersArray.forEach(function (value, index){
-    console.log(`Índice ${index} : ${value}`);
+numbersArray.forEach(function (value, index, array){
+    console.log(`Índice ${index} : ${value} y el array es ${array}`);
 });
 
-const getSleepHours = day => {
-    if (day === 'monday') {
-      return 8;
-    } else if (day === 'tuesday') {
-      return 7;
-    } else if (day === 'wednesday') {
-      return 6;
-    } else if (day === 'thursdayy') {
-      return 8;
-    } else if (day === 'friday') {
-      return 7;
-    } else if (day === 'saturday') {
-      return 9;
-    } else (day === 'sunday') {
-      return 10;
-    }
-  };
+numbersArray.forEach((value, index) => console.log(`Índice ${index} : ${value}`));
 
+
+//Para copiar los elementos de un array en otro
+let otherArray = [];
+
+numbersArray.forEach(item => otherArray.push(item));
+
+console.log(otherArray);
+
+
+//For....of
+
+for (const item of numbersArray) {
+    console.log(item);
+}
+
+let string = "casa";
+
+for (const item of string) {
+    console.log(item);
+}
+
+//Continue. Continuar saltando algo.
+
+for (let i = 0; i < 5; i++) {
+    if (i === 3) {
+        continue
+    }
+    console.log("Using continue", i);
+}
+
+//Break
+
+//mainLoop es una etiqueta que indica donde se hace el break
+mainLoop: while(true) {
+    while(true){
+        break mainLoop;//rompe o para el bucle en el que esté
+    }
+}
+
+//Ejemplo
+
+let i = 0;
+let k;
+
+mainLoop: while(true) {
+    console.log("Outer Loop", i);
+    i++;
+    k = 1;
+    while(true){
+        console.log("inner Loop", k);
+        k++;
+        if (i === 5 && k === 5) {
+            break mainLoop;
+        } else if (k === 5) {
+            break;
+        }
+    }
+}
 
 
