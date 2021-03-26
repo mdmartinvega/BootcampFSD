@@ -127,8 +127,68 @@ let table = createNode("table", "identificador-2");
 parent2.appendChild(newDiv);
 parent2.appendChild(table);
 
+//Events
+const colorButton = document.getElementsByTagName("button")[0];
+//Indicamos el index porque nos devuelve HTML Collection
+//que se comporta como un array. Para seleccionarlo 
+//específicamente indicamos index
+colorButton.addEventListener("click", function(event) {
+         console.log((event));
+    // console.log(event.target);
+    // document.body.classList.toggle("bg-red");
+    // console.log(event.target.tagName);
 
 
+    //Podemos controlar en qué momento ejecutar el evento
+    //Aquó con la tecla ctrl pulsada
+     if (event.ctrlKey) {
+         document.body.classList.toggle("bg-red");
+     }
+     console.log(`X: ${event.clientX} | Y: ${event.clientY}`);
+     console.log((`Alt: ${event.altKey}. Shift: ${event.shiftKey}. Ctrl: ${event.ctrlKey}`));
+});
+
+
+const emailInput = document.querySelector("#emailInput");
+//No indicamos el index en este caso porque no nos devuelve un HTML
+//collection
+
+emailInput.addEventListener("focus", inputListener);
+emailInput.addEventListener("blur", inputListener);
+
+function inputListener(event) {
+    console.log(event.target);
+    console.log("Tipo de evento ", event.type);
+
+    if (event.type === "focus") {
+        event.target.classList.add("bg-red");
+
+    } else if (event.type === "blur") {
+        event.target.classList.remove("bg-red");
+    }
+}
+
+const changeTitle = event => {
+    document.querySelectorAll("h1")[2].textContent = emailInput.value;
+    //Asigna el valor del input al h1
+}
+
+emailInput.addEventListener("keydown", inputListener);
+emailInput.addEventListener("keyup", changeTitle);
+
+const container = document.getElementById("container");
+
+container.addEventListener("mouseover", inputListener);
+container.addEventListener("mouseout", inputListener);
+
+
+function coords(event) {
+    const h1 = document.querySelectorAll("h1")[3];
+    h1.textContent = `X: ${event.clientX} | Y: ${event.clientY}`;
+
+}
+
+document.body.addEventListener("mousemove", coords);
 
 
 
