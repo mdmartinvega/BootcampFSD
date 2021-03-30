@@ -197,7 +197,11 @@ console.log("********Apdo 17*****************");
 diferentes: */
 myArray = ["one", "two", "three", "four", "five"];
 //• while
-
+i = 0;
+while (i < 5) {
+    console.log(myArray[i]);
+    i++;
+}
 //• for
 for (let i=0;i < myArray.length; i++) {
     console.log(`El índice es ${i} y el valor es ${myArray[i]}`);
@@ -205,7 +209,110 @@ for (let i=0;i < myArray.length; i++) {
 
 //• for of
 
+let myArray5 = ["one", "two", "three", "four", "five"];
+for (let count of myArray5) {
+    count++;
+    console.log(myArray5[count]);
+}
+
 //• forEach.*/
 myArray.forEach((value, index) => {
     console.log(`El índice es ${index} y el valor es ${value}`); 
 });
+
+console.log("********Apdo 18*****************");
+/*18. Crea una función que reciba un string y un número N y devuelva el 
+string original repetido N veces*/
+
+const repeatString = (value, nVeces) => 
+    value.repeat(nVeces);
+console.log(repeatString("No haré memes sobre el profesor. ", 5));
+
+console.log("********Apdo 19*****************");
+/*19. Crea una función que recibe un objeto con dos campos, votos positivos y 
+votos negativos y que devuelva la cuenta final.*/
+
+const getVoteCounts = function(obj) {
+    obj.upVotes;
+    obj.downVotes;
+    return obj.upVotes - obj.downVotes;
+}
+console.log(getVoteCounts({upVotes: 35, downVotes: 18}));
+
+console.log("********Apdo 20*****************");
+/*20. Crea una función que recibe un array de tipos de datos mezclados y que 
+devuelva otro array con el tipo de cada uno de los elementos.*/
+
+const getTypes = function(theArray) {
+    theArray= [];
+    return theArray.forEach(element => typeof theArray[element]);
+}
+console.log(getTypes([1, "hey", 2]));
+
+console.log("********Apdo 21*****************");
+/*21. Función que dado un array de números con formato string devuelva un 
+array con los números ya parseados.*/
+
+const getParsedNumbers = function([value]) {
+    value.forEach(element => {
+        Number.element;
+    });
+} 
+console.log(getParsedNumbers["2", "3"]);
+
+console.log("********Apdo 22*****************");
+/*22. Crea una función de flecha que devuelva “Positivo” si el número que 
+recibe por argumento es mayor o igual que cero y “Negativo” en caso contrario. 
+Usa el operador ternario.*/
+
+const positiveNumber = value =>
+    value >= 0 ? console.log("El número es positivo") : console.log("El número es negativo") ;
+positiveNumber(-1);
+
+console.log("********Apdo 23*****************");
+/*23. Crea una función que dado un array cualquiera y un índice, borre el 
+elemento guardado en ese índice.*/
+
+const anArray = function(value, index) {
+    return value.splice(index, 1);
+};
+console.log(anArray([1, 2, 3], 0));
+
+console.log("********Apdo 24*****************");
+/*24. Usando la función del apartado anterior, crea otra función que dado un 
+array de números y un número a filtrar, devuelva un array borrando todos las 
+apariciones de dicho número.*/
+
+console.log("********Apdo 25*****************");
+/*25. Crea dos funciones que recibirán un objeto, la primera devolverá un 
+array con los nombres de todas sus propiedades. La segunda devolverá un array 
+con los valores de dichas propiedades.
+Investigar los métodos keys y values del prototipo de Object.*/
+
+console.log("********Apdo 26*****************");
+/*26. Crea una función que invierta un string.*/
+let stringReverse = string =>
+    string.reverse;
+console.log(stringReverse("Hello"));
+
+console.log("********Apdo 27*****************");
+/*27. Crea una función que compare strings sin tener en cuenta las mayúsculas 
+/ minúsculas.*/
+
+const compareStrings = function(string1, string2) {
+    string1.toLowerCase() === string2.toLowerCase() ? console.log(true) : console.log(false);
+}
+compareStrings("HELO", "hello")
+
+console.log("********Apdo 28*****************");
+/*28. Crea una función que convierta en mayúscula sólo la primera letra de cada palabra 
+de un string dado. El apartado 11 será de ayuda. Investigar cómo unir un array 
+de strings en un único string.*/
+
+
+console.log("********Apdo 29*****************");
+/*29. Crea una función en una única línea que reciba un valor lógico y 
+devuelva el opuesto.*/
+
+const oppositeBoolean = value5 => value5 ? console.log(false) : console.log(true);
+oppositeBoolean(false);
