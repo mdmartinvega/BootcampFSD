@@ -2,10 +2,8 @@ console.log("********Apdo 1*****************");
 /*1. Define e inicializa un array con 5 
 elementos string en una sola línea.*/
 
-myArray = ["one", "two", "three", "four", "five"];
-myArray.forEach((value, index) => {
-    console.log(`El índice es ${index} y el valor es ${value}`); 
-});
+const myArray = ["one", "two", "three", "four", "five"];
+console.log(myArray);
 
 console.log("********Apdo 2*****************");
 /*2. Define un array inicialmente vacío. 
@@ -32,7 +30,7 @@ caso contrario. */
 function namedFunction(value) {
     value === true || value === false ? console.log(true) : console.log(false);
 };
-namedFunction(5);
+namedFunction("true");
 
 console.log("********Apdo 4*****************");
 /*4. Escribe una función que devuelva la longitud de un 
@@ -79,9 +77,9 @@ de diferentes longitudes.*/
 
 const myArray3 = function(array) {
     
-    return array[length-1];
+    return array[array.length-1];
 }
-console.log(myArray3([1, 2, 3]));
+console.log(myArray3([1, 2, 3, 4, 5]));
 
 console.log("********Apdo 9*****************");
 /* 9. Un granjero necesita contar la cantidad de patas de los animales en susdiferentes granjas muy
@@ -149,9 +147,8 @@ una función que se llame parseDomain() que reciba por argumento un string y
 devuelva un objeto con dos propiedades: domain y tld.*/
 
 const parseDomain = function(value) {
-    let domain, tld;
-    value.split(".");
-    return {domain, tld};
+    let domainTld = value.split(".");
+    return {domain: domainTld[0], tld: domainTld[1]};
 }
 console.log(parseDomain("codespaceacademy.com"));
 
@@ -182,20 +179,20 @@ console.log("********Apdo 16*****************");
 /*16. Crea una función que reciba un string y determine si está vacío sin 
 utilizar la propiedad length.*/
 
-// const emptyArray = function(value) {
-//     if (value.empty()) {
-//         console.log("Está vacío");
+const emptyString = function (string) {
+    if (string === "") {
+        console.log(`El string está vacío`);
+    } else {
+        console.log(`El string tiene un valor de ${string}`);
+    }
+}
+emptyString("");
 
-//     } else {
-//         console.log("No está vacío");
-//     }
-// };
-// emptyArray();
+const hasStringContent = string => string ? 'El string tiene contenido' : 'El string está vacío';
 
 console.log("********Apdo 17*****************");
 /*17. Imprimir elemento a elemento el array del apartado 1 de cuatro formas 
 diferentes: */
-myArray = ["one", "two", "three", "four", "five"];
 //• while
 i = 0;
 while (i < 5) {
@@ -211,8 +208,7 @@ for (let i=0;i < myArray.length; i++) {
 
 let myArray5 = ["one", "two", "three", "four", "five"];
 for (let count of myArray5) {
-    count++;
-    console.log(myArray5[count]);
+    console.log(count);
 }
 
 //• forEach.*/
@@ -243,22 +239,18 @@ console.log("********Apdo 20*****************");
 /*20. Crea una función que recibe un array de tipos de datos mezclados y que 
 devuelva otro array con el tipo de cada uno de los elementos.*/
 
-const getTypes = function(theArray) {
-    theArray= [];
-    return theArray.forEach(element => typeof theArray[element]);
-}
-console.log(getTypes([1, "hey", 2]));
+const getTypes = theArray =>
+    theArray.map(typeElement = element => typeof element);
+
+console.log(getTypes([1, "hey", undefined, {}, []]));
 
 console.log("********Apdo 21*****************");
 /*21. Función que dado un array de números con formato string devuelva un 
 array con los números ya parseados.*/
 
-const getParsedNumbers = function([value]) {
-    value.forEach(element => {
-        Number.element;
-    });
-} 
-console.log(getParsedNumbers["2", "3"]);
+const getParsedNumbers = theArrayString =>
+    theArrayString.map(parse = element => Number(element));
+console.log(getParsedNumbers(["2", "3", "0.5"]));
 
 console.log("********Apdo 22*****************");
 /*22. Crea una función de flecha que devuelva “Positivo” si el número que 
@@ -289,30 +281,55 @@ array con los nombres de todas sus propiedades. La segunda devolverá un array
 con los valores de dichas propiedades.
 Investigar los métodos keys y values del prototipo de Object.*/
 
+const propertyNames = (object) =>  Object.keys(object);
+let pruebaApt25 = {key1: 'value1', key2: 'value2', key3: 'value3'};
+console.log(propertyNames(pruebaApt25));
+
+const propertyValues = (object) => Object.values(object);  
+console.log(propertyValues(pruebaApt25));
+
+
 console.log("********Apdo 26*****************");
 /*26. Crea una función que invierta un string.*/
 let stringReverse = string =>
-    string.reverse;
-console.log(stringReverse("Hello"));
+    string.split("").reverse().join("");
+console.log(stringReverse(".nóicamargorp ed sedrat sal ne éfac led érasuba oN"));
+
+const stringReverse = string => {
+    let reversed = '';
+    for (let char of string) {
+        reversed = char.concat(reversed);
+    }
+    return reversed;
+};
 
 console.log("********Apdo 27*****************");
 /*27. Crea una función que compare strings sin tener en cuenta las mayúsculas 
 / minúsculas.*/
 
-const compareStrings = function(string1, string2) {
-    string1.toLowerCase() === string2.toLowerCase() ? console.log(true) : console.log(false);
-}
-compareStrings("HELO", "hello")
+const compareStrings = (string1, string2) =>
+    string1.toLowerCase() === string2.toLowerCase() ? true : false;
+
+console.log(compareStrings("HELO", "hello"));
+
+const compareStrings = (string1, string2) => string1.toLowerCase() === string2.toLowerCase() ? true : false;
 
 console.log("********Apdo 28*****************");
 /*28. Crea una función que convierta en mayúscula sólo la primera letra de cada palabra 
 de un string dado. El apartado 11 será de ayuda. Investigar cómo unir un array 
 de strings en un único string.*/
 
+const firstCapitalize = value =>
+    value.split(" ").map(firstLetter =>firstLetter[0].toUpperCase() + firstLetter.slice(1).toLowerCase()).join(" ");
+console.log(firstCapitalize('Esto ES oTRa prueBa pARA COMPROBAR sI FuncIona CorrecTAMENTe mi FUNCIÓn :)'));
 
 console.log("********Apdo 29*****************");
 /*29. Crea una función en una única línea que reciba un valor lógico y 
 devuelva el opuesto.*/
 
-const oppositeBoolean = value5 => value5 ? console.log(false) : console.log(true);
-oppositeBoolean(false);
+const oppositeBoolean = boolean => !boolean;
+console.log(oppositeBoolean(true));
+console.log(oppositeBoolean(1 === 1));
+console.log(oppositeBoolean(""));
+console.log(oppositeBoolean(0));
+console.log(oppositeBoolean(!0));
