@@ -12,7 +12,7 @@ const booleanCheck = (argumento) => typeof argumento === "boolean" ? true : fals
 console.log(booleanCheck(true));
 console.log(booleanCheck("true"));
 console.log(booleanCheck(3));
-console.log(booleanCheck(anArray));
+
 
 //********************* */
 

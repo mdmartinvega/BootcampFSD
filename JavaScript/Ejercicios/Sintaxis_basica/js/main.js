@@ -27,10 +27,24 @@ console.log("********Apdo 3*****************");
 el argumento dado es de tipo boolean y false en
 caso contrario. */
 
-function namedFunction(value) {
-    value === true || value === false ? console.log(true) : console.log(false);
+const booleanCheck = (argumento) => typeof argumento === "boolean" ? true : false;
+
+console.log(booleanCheck(true));
+console.log(booleanCheck("true"));
+console.log(booleanCheck(3));
+
+function trueorfalse(argument) {
+    if (typeof argument === "boolean"){
+        return true;
+    } 
+    else {
+        return false;
+    }
 };
-namedFunction("true");
+
+console.log(trueorfalse(true));
+console.log(trueorfalse("true"));
+console.log(trueorfalse(3));
 
 console.log("********Apdo 4*****************");
 /*4. Escribe una función que devuelva la longitud de un 
@@ -59,7 +73,7 @@ const parNumber = function(value) {
     } else {
         console.log(value + 1);
     }
-}
+};
 parNumber(8);
 
 console.log("********Apdo 7*****************");
@@ -295,7 +309,7 @@ let stringReverse = string =>
     string.split("").reverse().join("");
 console.log(stringReverse(".nóicamargorp ed sedrat sal ne éfac led érasuba oN"));
 
-const stringReverse = string => {
+const stringReverseLuis = string => {
     let reversed = '';
     for (let char of string) {
         reversed = char.concat(reversed);
@@ -312,7 +326,7 @@ const compareStrings = (string1, string2) =>
 
 console.log(compareStrings("HELO", "hello"));
 
-const compareStrings = (string1, string2) => string1.toLowerCase() === string2.toLowerCase() ? true : false;
+const compareStringsLuis = (string1, string2) => string1.toLowerCase() === string2.toLowerCase() ? true : false;
 
 console.log("********Apdo 28*****************");
 /*28. Crea una función que convierta en mayúscula sólo la primera letra de cada palabra 

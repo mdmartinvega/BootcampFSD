@@ -73,6 +73,10 @@ body {
 .form label {
   padding: 5px; 
 }
+.label:focus {
+  box-shadow: 0px 0px 10px var(--gray-medium);
+  outline: none;
+}
 
 /* Login bottom */
 .submitInput {
@@ -83,7 +87,6 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .transition-2:hover {
   transition: 0.2s ease-in;
   background-color: var(--purple-dark);
@@ -312,20 +315,22 @@ table tr:hover {
 
 /* Status */
 .status {
-  padding: 8px 10px;
+  padding: 6px 10px;
   border-radius: 15px;
-  width: fit-content;
 }
 .approved {
   background-color: var(--green-light);
   color: var(--green-dark);
+  width: 6.1em;
 }
 .expired {
   color: var(--gray-dark);
+  width: 5em;
 }
 .denied {
   background-color: var(--red-light);
   color: var(--red-dark);
+  width: 5em;
 }
 
 /* -------------------- Footer -----------------*/
@@ -416,18 +421,10 @@ footer {
   [class^="container"] {
     margin-right: 5px;
   }
-  .container-1 {
-    grid: 1 / 1;
-  }
-  .container-2 {
-    grid: 1 / 2;
-  }
-  .container-3 {
-    grid: 2 / 1;
-  }
-  .container-4 {
-    grid: 2 / 2;
-  }
+  .container-1 {grid: 1 / 1;}
+  .container-2 {grid: 1 / 2;}
+  .container-3 {grid: 2 / 1;}
+  .container-4 {grid: 2 / 2;}
 
   /* Table Images */
   .person {
@@ -455,7 +452,6 @@ footer {
   .section {
     display: flex;
     justify-content: space-between;
-    width: 100%;
   }
   [class^="container"] {
     width: 90%;
