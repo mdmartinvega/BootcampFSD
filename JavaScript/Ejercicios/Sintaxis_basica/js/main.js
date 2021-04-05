@@ -12,46 +12,38 @@ Elimina por completo el primero y añade dos nuevos números
 al inicio. En cada paso, imprime la longitud y el array
 entero por consola utilizando un string template del tipo: `Longitud: ${}`.*/
 
-myArray2 = [];
-myArray2.push(1, 2, 3);
-console.log(`Mi array es ${myArray2} y su longitud es de ${myArray2.length}`);
-
-myArray2.shift();
-console.log(`Mi array es ${myArray2} y su longitud es de ${myArray2.length}`);
-
-myArray2.unshift(-3, -2);
-console.log(`Mi array es ${myArray2} y su longitud es de ${myArray2.length}`);
+const oneArray = [];
+console.log(`Longitud: ${oneArray.length}`, oneArray);
+oneArray.push(1, 2, 3);
+console.log(`Longitud: ${oneArray.length}`, oneArray);
+oneArray.splice(0, 1, -3, -2);
+console.log(`Longitud: ${oneArray.length}`, oneArray);
 
 console.log("********Apdo 3*****************");
 /*3. Escribe una función nombrada que devuelva true si 
 el argumento dado es de tipo boolean y false en
 caso contrario. */
 
-const booleanCheck = (argumento) => typeof argumento === "boolean" ? true : false;
+const booleanCheck = argumento => typeof argumento === "boolean";
 
 console.log(booleanCheck(true));
 console.log(booleanCheck("true"));
 console.log(booleanCheck(3));
 
-function trueorfalse(argument) {
-    if (typeof argument === "boolean"){
-        return true;
-    } 
-    else {
-        return false;
-    }
-};
+function booleanCheck2 (argumento) {
+    return typeof argumento === "boolean";
+}
 
-console.log(trueorfalse(true));
-console.log(trueorfalse("true"));
-console.log(trueorfalse(3));
+console.log(booleanCheck2(true));
+console.log(booleanCheck2("true"));
+console.log(booleanCheck2(3));
+
 
 console.log("********Apdo 4*****************");
 /*4. Escribe una función que devuelva la longitud de un 
 string recibido por argumento.*/
 
-let longFunction = value => 
-    value.length;
+const longFunction = value => value.length;
 
 console.log(longFunction("Holassss"));
 
@@ -69,12 +61,13 @@ siguiente número par. (Si él es par, lo devolverá directamente).*/
 
 const parNumber = function(value) {
     if (value % 2 === 0) {
-        console.log(value);
+        return value;
     } else {
-        console.log(value + 1);
+        return value + 1;
     }
 };
-parNumber(8);
+console.log(parNumber(8));
+console.log(parNumber(7));
 
 console.log("********Apdo 7*****************");
 /*7. Crea una función que reciba una edad y devuelva la 
@@ -94,6 +87,8 @@ const myArray3 = function(array) {
     return array[array.length-1];
 }
 console.log(myArray3([1, 2, 3, 4, 5]));
+console.log(myArray3([1, 4, 5]));
+console.log(myArray3([1]));
 
 console.log("********Apdo 9*****************");
 /* 9. Un granjero necesita contar la cantidad de patas de los animales en susdiferentes granjas muy
@@ -113,8 +108,11 @@ console.log("********Apdo 10*****************");
 son del mismo tipo.*/
 
 let sameType = (data1, data2) =>
-typeof data1 === typeof data2 ? console.log(`Mismo tipo`) : console.log(`Diferente tipo`);
-sameType(1, 1);
+typeof data1 === typeof data2 ? `Mismo tipo` : `Diferente tipo`;
+console.log(sameType(1, 1));
+console.log(sameType(1, "string"));
+console.log(sameType(undefined, null));
+console.log(sameType(true, false));
 
 console.log("********Apdo 11*****************");
 /*11. Crea una función que reciba un string con una frase y devuelva un array 
@@ -166,41 +164,34 @@ const parseDomain = function(value) {
 }
 console.log(parseDomain("codespaceacademy.com"));
 
+
 console.log("********Apdo 14*****************");
 /*14. Nos han prohibido el uso del operador de igualdad estricta (===), pero 
 queremos poder seguir utilizando dicha esa funcionalidad. Crea una función que
 devuelva true si dos números tienen el mismo valor y el mismo tipo de dato.
 Debemos usar el operador lógico “&&”. Prueba tu función con dos estos inputs:*/
 
-let strictEquality = function (value3, value4) {
-    if (value3 == value4 && typeof value3 == typeof value4) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-}
-strictEquality(5,5);
+let strictEquality = (value3, value4) => value3 == value4 && typeof value3 == typeof value4;
+console.log(strictEquality("5",5));
+console.log(strictEquality(5,5));
 
 console.log("********Apdo 15*****************");
 /*15. Crea una función que reciba dos strings y devuelva true si tienen la 
 misma longitud y false en caso contrario.*/
 
-const sameString = (value1, value2) =>
-    value1.length === value2.length ? console.log(true): console.log(false);
-sameString("hola", "hhola");
+const sameString = (value1, value2) => value1.length === value2.length;
+console.log(sameString("hola", "hhola"));
+console.log(sameString("hola", "casa"));
 
 console.log("********Apdo 16*****************");
 /*16. Crea una función que reciba un string y determine si está vacío sin 
 utilizar la propiedad length.*/
 
 const emptyString = function (string) {
-    if (string === "") {
-        console.log(`El string está vacío`);
-    } else {
-        console.log(`El string tiene un valor de ${string}`);
-    }
+    return string === "";
 }
-emptyString("");
+console.log(emptyString(""));
+console.log(emptyString("fghj"));
 
 const hasStringContent = string => string ? 'El string tiene contenido' : 'El string está vacío';
 
@@ -208,8 +199,9 @@ console.log("********Apdo 17*****************");
 /*17. Imprimir elemento a elemento el array del apartado 1 de cuatro formas 
 diferentes: */
 //• while
-i = 0;
-while (i < 5) {
+
+let i = 0;
+while (i < myArray.length) {
     console.log(myArray[i]);
     i++;
 }
@@ -220,8 +212,7 @@ for (let i=0;i < myArray.length; i++) {
 
 //• for of
 
-let myArray5 = ["one", "two", "three", "four", "five"];
-for (let count of myArray5) {
+for (let count of myArray) {
     console.log(count);
 }
 
@@ -243,8 +234,6 @@ console.log("********Apdo 19*****************");
 votos negativos y que devuelva la cuenta final.*/
 
 const getVoteCounts = function(obj) {
-    obj.upVotes;
-    obj.downVotes;
     return obj.upVotes - obj.downVotes;
 }
 console.log(getVoteCounts({upVotes: 35, downVotes: 18}));
@@ -256,7 +245,7 @@ devuelva otro array con el tipo de cada uno de los elementos.*/
 const getTypes = theArray =>
     theArray.map(typeElement = element => typeof element);
 
-console.log(getTypes([1, "hey", undefined, {}, []]));
+console.log(getTypes([1, "hey", undefined, {}, [], 0, null, NaN]));
 
 console.log("********Apdo 21*****************");
 /*21. Función que dado un array de números con formato string devuelva un 
@@ -271,23 +260,36 @@ console.log("********Apdo 22*****************");
 recibe por argumento es mayor o igual que cero y “Negativo” en caso contrario. 
 Usa el operador ternario.*/
 
-const positiveNumber = value =>
-    value >= 0 ? console.log("El número es positivo") : console.log("El número es negativo") ;
-positiveNumber(-1);
+const positiveNumber = value => value >= 0 ? "El número es positivo" : "El número es negativo";
+console.log(positiveNumber(-1));
+console.log(positiveNumber(0));
+console.log(positiveNumber(1));
 
 console.log("********Apdo 23*****************");
 /*23. Crea una función que dado un array cualquiera y un índice, borre el 
 elemento guardado en ese índice.*/
 
-const anArray = function(value, index) {
+const removeItem = function(value, index) {
     return value.splice(index, 1);
 };
-console.log(anArray([1, 2, 3], 0));
+console.log(removeItem([1, 2, 3], 0));
 
 console.log("********Apdo 24*****************");
 /*24. Usando la función del apartado anterior, crea otra función que dado un 
 array de números y un número a filtrar, devuelva un array borrando todos las 
 apariciones de dicho número.*/
+
+const filterItem = (array, numberToFilter) => {
+    array.forEach((element, index) => {
+        if (element === numberToFilter) {
+            removeItem(array, index);
+        }
+    });
+}
+
+const arrayFiltered = [1, 5, 3, 5, 7];
+filterItem(arrayFiltered, 5);
+console.log(arrayFiltered);
 
 console.log("********Apdo 25*****************");
 /*25. Crea dos funciones que recibirán un objeto, la primera devolverá un 
