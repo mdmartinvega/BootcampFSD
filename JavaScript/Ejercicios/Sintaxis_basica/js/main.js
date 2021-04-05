@@ -297,8 +297,8 @@ array con los nombres de todas sus propiedades. La segunda devolverá un array
 con los valores de dichas propiedades.
 Investigar los métodos keys y values del prototipo de Object.*/
 
-const propertyNames = (object) =>  Object.keys(object);
 let pruebaApt25 = {key1: 'value1', key2: 'value2', key3: 'value3'};
+const propertyNames = (object) =>  Object.keys(object);
 console.log(propertyNames(pruebaApt25));
 
 const propertyValues = (object) => Object.values(object);  
