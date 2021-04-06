@@ -30,15 +30,11 @@ let listItems = document.querySelectorAll("li");
 let picture = document.querySelector("img");
 console.log(picture);
 
-listItems[0].addEventListener("click", function(event) {
-    picture.src = event.target.textContent;
-});
-listItems[1].addEventListener("click", function(event) {
-    picture.src = event.target.textContent;
-});
-listItems[2].addEventListener("click", function(event) {
-    picture.src = event.target.textContent;
-});
+const appearPicture = event => picture.src = event.target.textContent;
+
+listItems[0].addEventListener("click", appearPicture);
+listItems[1].addEventListener("click", appearPicture);
+listItems[2].addEventListener("click", appearPicture);
 
 /*4. Añadir un input de tipo texto y un botón. Al pulsar el botón debe 
 escribirse el texto del input en un párrafo.
@@ -51,6 +47,7 @@ const clickButtom = document.querySelector(".buttom-2");
 
 clickButtom.addEventListener("click", function() {
     paragraph4.textContent = textInput.value;
+    textInput.value = "";
 });
 
 const textInput2 = document.querySelector("#labelInput-2");
@@ -62,21 +59,67 @@ textInput2.addEventListener("keydown", function() {
 /*5. De forma similar al anterior, pero para un textarea y validará si lo 
 introducido es mayor de 15 caracteres*/
 
+const textArea = document.querySelector("#textArea");
+const paragraph5 = document.querySelector(".p-ej5");
+
+textArea.addEventListener("input", (event) => {
+    if (event.target.value.length > 15) {
+        paragraph5.textContent = `Tu texto tiene más de 15 caracteres`;
+        paragraph5.style.color = "green";
+        paragraph5.style.fontSize = "1.5em";
+    } else {
+        paragraph5.textContent = "Tu texto tiene menos de 15 caracteres";
+        paragraph5.style.color = "red";
+        paragraph5.style.fontSize = "1.5em";
+    }
+    
+});
+
 /*6. Añadir un input de tipo texto con leyenda: “Escribir un número par”. Añadir 
 un botón. Al pulsar el botón nos validará si el número es par o no. En caso 
 negativo, cambiar los bordes del input a rojo.Para revertir el estado de una 
 propiedad, podemos utilizar el valor “revert” o dejarla vacío.*/
 
-const textInput3 = document.querySelector("#labelInput-3");
-const clickButtom3 = document.querySelector(".buttom-3");
+const textInput6 = document.querySelector("#labelInput-6");
+const clickButtom6 = document.querySelector(".buttom-6");
 
-clickButtom3.addEventListener("click", function (evento) {
-    
+clickButtom6.addEventListener("click", () => {
+    if (textInput6.value % 2 === 0) {
+        textInput6.style.borderColor = "green";
+        
+    } else {
+        textInput6.style.borderColor = "red";
+    }
 })
 
+/*77.Partiendo de una lista ul, crear 10 licon un texto indicando el número del elemento 
+(“Elemento X”) usando un bucle for.*/
+
+const ul = document.querySelector(".ul");
+
+for (let i = 1; i <= 10; i++) {
+    let element = document.createElement("li");
+    element.textContent = `Elemento ${i}`
+    ul.appendChild (element);
+}
+
+/*8.Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. 
+Si pulso primero el botón y luego el enlace, se me abre en una nueva pestaña.*/
+
+/*9.Añadir un párrafo y un selectcon 5 opciones de colores: negro, blanco, rojo, amarillo, verde 
+y azul. Al seleccionar un color del select, cambiar el color del párrafo.*/
+
+/*10.Incluir un botón que al pulsarlo genere un número aleatorio y mantenga en una lista 
+actualiza el número de elementos que se han generado, los que son pares y los que son impares.*/
+
+/*11.Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. 
+Al pulsar el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe,
+lo añadirá al principio.*/
 
 
-
+/*12.Crearemos una clase .btn en CSS que le de ciertos estilos a un botón. Al hacer clicken el 
+botón haremos “toggle” o alternaremos esa clase, es decir, si está presente la quitaremos y si 
+no está, la añadiremos.*/
 
 
 

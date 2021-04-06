@@ -277,7 +277,7 @@ console.log(removeItem([1, 2, 3], 0));
 console.log("********Apdo 24*****************");
 /*24. Usando la función del apartado anterior, crea otra función que dado un 
 array de números y un número a filtrar, devuelva un array borrando todos las 
-apariciones de dicho número.*/
+apariciones de dicho número. HACER CONTADOR AL REVÉS*/
 
 const filterItem = (array, numberToFilter) => {
     array.forEach((element, index) => {
@@ -287,7 +287,7 @@ const filterItem = (array, numberToFilter) => {
     });
 }
 
-const arrayFiltered = [1, 5, 3, 5, 7];
+const arrayFiltered = [1, 5, ,5, 3, 5, 5, 7];
 filterItem(arrayFiltered, 5);
 console.log(arrayFiltered);
 
@@ -297,7 +297,7 @@ array con los nombres de todas sus propiedades. La segunda devolverá un array
 con los valores de dichas propiedades.
 Investigar los métodos keys y values del prototipo de Object.*/
 
-let pruebaApt25 = {key1: 'value1', key2: 'value2', key3: 'value3'};
+let pruebaApt25 = {key1: 'value1', key2: ['value2', 'valueOther'], key3: 'value3'};
 const propertyNames = (object) =>  Object.keys(object);
 console.log(propertyNames(pruebaApt25));
 
@@ -324,11 +324,10 @@ console.log("********Apdo 27*****************");
 / minúsculas.*/
 
 const compareStrings = (string1, string2) =>
-    string1.toLowerCase() === string2.toLowerCase() ? true : false;
+    string1.toLowerCase() === string2.toLowerCase();
 
 console.log(compareStrings("HELO", "hello"));
-
-const compareStringsLuis = (string1, string2) => string1.toLowerCase() === string2.toLowerCase() ? true : false;
+console.log(compareStrings("HELLO", "hello"));
 
 console.log("********Apdo 28*****************");
 /*28. Crea una función que convierta en mayúscula sólo la primera letra de cada palabra 
