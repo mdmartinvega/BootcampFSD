@@ -213,7 +213,33 @@ const person3 = {
 person2.talk();
 person3.talk();
 
-console.clear();
+
+// Object Constructor using functions
+
+function Car(brand, color, weight, topSpeed) {
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.getDescription = function() {
+        return `This ${this.color} ${this.brand} weights ${this.weight} kilos and can reach up` +
+        `to ${this.topSpeed} kms/h`
+    }
+}
+//new crea el constructor del objeto, sino devolvería una función
+const car1 = new Car("Mercedes", "red", 2000, 200);
+const car2 = new Car("Volvo", "black", 2500, 190);
+const car3 = new Car("Volkswagen", "grey", 2200, 180);
+
+console.log(car1, car2, car3);
+
+console.log(car3.getDescription());
+
+
+
+
+
+
 
 // Arrays ----------------------------------
 

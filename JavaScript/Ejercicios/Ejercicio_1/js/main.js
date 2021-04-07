@@ -92,7 +92,7 @@ clickButtom6.addEventListener("click", () => {
     }
 })
 
-/*77.Partiendo de una lista ul, crear 10 licon un texto indicando el número del elemento 
+/*7.Partiendo de una lista ul, crear 10 licon un texto indicando el número del elemento 
 (“Elemento X”) usando un bucle for.*/
 
 const ul = document.querySelector(".ul");
