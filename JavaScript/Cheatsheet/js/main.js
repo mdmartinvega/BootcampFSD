@@ -235,6 +235,8 @@ console.log(car1, car2, car3);
 
 console.log(car3.getDescription());
 
+console.log(car1 instanceof Car);
+
 
 
 
@@ -434,6 +436,93 @@ numbersArray.sort((a,b) => a - b);
 
 let square2 = num => num * num;
 console.log(square2(5));
+
+
+
+//Higher Order Functions -------------------------------------
+
+//Map -----------------------------------------------------------------------
+
+let arr1 = [1, 2, 3];
+let arr2 = [];
+
+for (let num of arr1) {
+    arr2.push(num * 2);
+}
+console.log(arr1, arr2);
+
+arr1 = [1, 2, 3];
+arr2 = arr1.map(num => num *2);
+console.log(arr1, arr2);
+
+//A partir de un array con años de nacimiento, calcular edades
+
+const birthYears = [1983, 1985, 1979, 2000, 2005, 1981, 2015];
+let currentYear = 2021;
+const ages = birthYears.map(year => currentYear - year);
+console.log(ages);
+
+//Filter ----------------------------------------------------------------------------
+let prices = [150, 50, 49, 51, 15, 237]
+let expensivePrices = [];
+
+for (let item of prices) {
+    if (item >= 50){
+        expensivePrices.push(item);
+    }
+}
+prices = [150, 50, 49, 51, 15, 237]
+expensivePrices = prices.filter(item => item >=50);
+console.log(expensivePrices);
+
+//-----
+
+const cars = [
+    {
+        brand: "BMW",
+        year:1990,
+        plateNumber: "HG123",
+        address: {
+            street: "Rue",
+            city: "Madrid"
+        }
+    },
+    {
+        brand: "Mercedes",
+        year:1980,
+        plateNumber: "HG123",
+        address: {
+            street: "Rue",
+            city: "Madrid"
+        }
+    },
+    {
+        brand: "Volvo",
+        year:1956,
+        plateNumber: "LG123",
+        address: {
+            street: "Rue",
+            city: "Madrid"
+        }
+    }
+
+];
+
+console.log(cars.filter(car => car.plateNumber.includes("L")));
+console.log(cars.filter(car => car.year > 1989));
+const cars2 = cars.map(car => car.year + 5);
+console.log(cars2);
+console.log(cars.filter(car => car.address.city === "Madrid" && car.year === 1995));
+
+//sort ----------------------------------
+
+cars.sort((car1, car2) => car1.year - car2.year);
+
+//Reduce -----------------------
+
+const arr = [10, 7, 13, 20];
+
+console.log(arr.reduce((suma, currentNumber) => suma + currentNumber, 100));
 
 
 // ----------------------- Bucles -----------------------------
