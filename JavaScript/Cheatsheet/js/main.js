@@ -238,11 +238,6 @@ console.log(car3.getDescription());
 console.log(car1 instanceof Car);
 
 
-
-
-
-
-
 // Arrays ----------------------------------
 
 let selectedColors = ["red", "blue"]; //Array de strings
