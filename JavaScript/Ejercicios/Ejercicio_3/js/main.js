@@ -11,7 +11,7 @@ function Employee(position, efficiency, salary) {
 
 let arrayObject = []
 for (let object = 1; object <= 100; object++) {
-    arrayObject.push(new Employee(`Empleado ${object}`, Math.random().toFixed(2), Math.floor(Math.random() * (4000 - 1250 + 1)) + 1250)); 
+    arrayObject.push(new Employee(`Empleado ${object}`, Number(Math.random().toFixed(2)), Math.floor(Math.random() * (4000 - 1250 + 1)) + 1250)); 
     
 };
 console.log(arrayObject); 
@@ -52,18 +52,58 @@ console.log(arrayObject);
 
 /*5. Usando filter: imprimir el cargo y salario de los que cobren más de 2500€.*/
 
-newArrayObject = arrayObject.filter(empleado => empleado.salary > 2500);
-console.log(newArrayObject);
+arrayObject
+    .filter(empleado => empleado.salary > 2500)
+    .forEach(empleado => console.log(empleado.position, empleado.salary));
+
 
 
 /*6. Usando map: subir el sueldo un 25% a los que cobren menos de 1500€ y volver a hacer el punto 5.*/
 
-let increased = 0.25;
-arrayObject.map(empleado => (empleado.salary * increased) + empleado.salary);
+let increased = 1.25;
+arrayObject = arrayObject.map(empleado => {
+    if (empleado.salary < 1500) {
+        empleado.salary = empleado.salary * increased 
+    } return empleado;
+});
+
 console.log(arrayObject);
 
-newArrayObject = arrayObject.filter(empleado => empleado.salary > 2500);
-console.log(newArrayObject);
+/*7.Usando reduce: Obtener el coste total de todos los sueldos para la empresa teniendo en cuenta que a la empresa le cuesta tener un empleado su sueldo más un 15%
+por impuestos. */
 
+const totalSalary = arrayObject.reduce((salarySum, empleado) => {
+    return salarySum += empleado.salary * 1.15;
+}, 0);
+
+console.log(totalSalary);
+
+
+/*8.Usar el método o métodos (reduce / map/ filter/ sort) que determinemos oportuno e imprimir en cada apartado:
+•Despedir a los que tengan un rendimiento menor a 0.3.•*/
+
+arrayObject = arrayObject.filter(empleado => empleado.efficiency >= 0.3);
+
+console.log("Despedir a los que tengan un rendimiento menor a 0.3", arrayObject);
+
+//Calcular el sueldo medio de la empresa.
+
+let averageSalary = arrayObject.reduce((salarySum, empleado) => salarySum + empleado.salary, 0) / arrayObject.length;
+averageSalary = averageSalary.toFixed(2);
+
+console.log("Calcular el sueldo medio de la empresa", averageSalary);
+
+//•Subir el sueldo de los que tengan un rendimiento superior a 0.7.*/
+
+arrayObject = arrayObject.map(empleado => {
+    if (empleado.efficiency > 0.7) {
+        empleado.salary = empleado.salary * 1.25;  
+        console.log("Subido el sueldo de", empleado.position); 
+    }
+    return empleado
+    
+});
+
+console.log(arrayObject);
 
 
