@@ -59,6 +59,8 @@ function fillData (){
                 newFila.appendChild(dataBook)
             }; 
 
+            
+
         newFila.innerHTML += `<td><button class="btn btn-danger">Eliminar</button></td>`;
         
 
@@ -68,9 +70,6 @@ function fillData (){
 fillData();
 
 // 5. Si el botón de eliminar es pulsado, borrará el libro del array y actualizará la tabla.
-
-const createdButton = document.getElementsByClassName("btn-danger");
-const fila = document.getElementsByTagName("tr");
 
 bodyTable.onclick = e => {
     if (e.target.tagName === "BUTTON") {
