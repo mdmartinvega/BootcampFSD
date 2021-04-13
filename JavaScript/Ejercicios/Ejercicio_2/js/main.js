@@ -48,7 +48,8 @@ function fillList(user) {
     list.innerHTML = "";
 
     for (const propertyName in user) {//Aceder a las propiedades de un objeto
-        const value = user[propertyName];
+        const value = user[propertyName];//Manera de acceder a la propiedad de un objeto
+        //Siempre es un string por eso "function" 
         if (typeof value !== "function"){
             //console.log(`key: ${propertyName}, value: ${value}`);
             const newListItem = document.createElement("li");

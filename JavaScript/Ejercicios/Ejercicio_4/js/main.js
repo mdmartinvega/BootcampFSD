@@ -61,7 +61,7 @@ function fillData (){
 
             
 
-        newFila.innerHTML += `<td><button class="btn btn-danger">Eliminar</button></td>`;
+        newFila.innerHTML += `<td><button class="btn btn-danger" id="${book.id}">Eliminar</button></td>`;
         
 
     };

@@ -535,6 +535,21 @@ console.log(arr.reduce((suma, currentNumber) => suma + currentNumber, 100));
 
 // ----------------------- Bucles -----------------------------
 
+// - Cuando queramos iterar arrays
+// for of
+// forEach
+
+// - Cuando no sepamos la cantidad de iteraciones
+// while
+
+// - Cuando queramos iterar propiedades de un objeto
+// for in
+
+// - Cuando ninguno de los anteriores nos valga
+// for común (for i = 0; i < max; i++)
+
+
+
 for (let i= 0; i <= 10; i++) {
     console.log(`Ìndice: ${i}`);
 }
