@@ -23,6 +23,7 @@ let books = [
     new Book("The La nueva mente", "Yuval Noah", 789120, 12),
     new Book("La nueva mente", "Roger Penrose", 740117, 18)
 ];
+let booksToDisplay = Array.from(books); //Copiamos el array original [...book]
 
 
 /*4. Para cada elemento del array, tendremos crear una nueva fila en la tabla con las columnas para todas las 
@@ -33,18 +34,18 @@ Se aconseja la creación de una función para actualizar la tabla (o el tbody) d
 const headerTable = document.querySelector(".rowHead");
 const bodyTable = document.querySelector(".tBody");
 const search = document.querySelector(".search");
+const tfoot = document.querySelector("tfoot");
 headerTable.innerHTML += `<th><b>#</b></th>
                           <th><b>Title</b></th>
                           <th><b>Author</b></th>
                           <th><b>Sales</b></th>
-                          <th class="priceSort"><b>Price</b></th>
+                          <th id="priceSort" style="cursor: pointer"><b>Price</b></th>
                           <th><b>Remove</b></th>`;
 
 function fillData (){
 
     bodyTable.innerHTML = ""; //Vaciar tabla
-    let booksToDisplay = books;
-    booksToDisplay = booksToDisplay.filter(book => book.title.includes(search.value));
+    booksToDisplay = books.filter(book => book.title.toLowerCase().includes(search.value.toLowerCase()));
 
     for (const book of booksToDisplay) { //Crear filas
         let newFila = document.createElement("tr");
@@ -62,6 +63,8 @@ function fillData (){
             }; 
 
         newFila.innerHTML += `<td><button class="btn btn-danger" id="${book.id}">Eliminar</button></td>`;
+
+    
     };
     
 };
@@ -96,6 +99,10 @@ save.addEventListener("click", function() {
     for (const input of inputs) {
         input.value ="";
     }
+    booksToDisplay.push(new Book(title.value, author.value, sales.value, price.value, ""));
+    for (const input of inputs) {
+        input.value ="";
+    }
     fillData();
 });
 
@@ -111,14 +118,18 @@ search.addEventListener("input", fillData);
 /*2. Añadiremos un botón para ordenar la tabla por el precio de forma creciente / decreciente.
 (Efecto toggle).*/
 
-const priceSort = document.querySelector(".priceSort");
+const priceSort = document.getElementById("priceSort");
+let ascendingOrder = true;
 
-priceSort.addEventListener("click", function (e) {
-    let booksToDisplay = books;
-    booksToDisplay = booksToDisplay.sort(
-        function (a, b) {
-            return b.prize - a.prize;
-        })
+priceSort.addEventListener("click", () => {
+    ascendingOrder = !ascendingOrder;
+    ascendingOrder 
+                ? books.sort((book1, book2) => book1.prize - book2.prize)
+                : books.sort((book1, book2) => book2.prize - book1.prize); 
+
+
+    fillData();
+
 });
 
 
