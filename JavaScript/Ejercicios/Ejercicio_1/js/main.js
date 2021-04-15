@@ -106,6 +106,13 @@ for (let i = 1; i <= 10; i++) {
 /*8.Crear un enlace y un botón. Si pulso el enlace se me abre la URL en la misma página. 
 Si pulso primero el botón y luego el enlace, se me abre en una nueva pestaña.*/
 
+const button8 = document.querySelector(".buttom-8");
+const link8 = document.querySelector(".a");
+
+button8.addEventListener("click", function(e){
+    link8 
+})
+
 /*9.Añadir un párrafo y un selectcon 5 opciones de colores: negro, blanco, rojo, amarillo, verde 
 y azul. Al seleccionar un color del select, cambiar el color del párrafo.*/
 

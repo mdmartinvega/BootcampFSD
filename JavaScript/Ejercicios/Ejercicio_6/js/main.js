@@ -39,6 +39,8 @@ fetch(URL)
 const URL2 = "https://jsonplaceholder.typicode.com/posts";
 
 const container = document.getElementById("container");
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
 
 function postsArray(arrayTwo) {
     arrayTwo.slice(0, 20).forEach(element => {
@@ -51,6 +53,18 @@ function postsArray(arrayTwo) {
     });
 };
 
+function paginating (arrayTwo, currentPage, elementsByPage) {
+    currentPage = 1;
+    elementsByPage = Number(document.getElementsByTagName("h1","p").value) || 5;
+
+    const totalPages = Math.ceil(arrayTwo.length / elementsByPage);
+    const formPaginator = elementsByPage * (currentPage - 1);
+    return arrayTwo.slice(formPaginator, elementsByPage * currentPage);
+  };
+
+
+
+
 fetch(URL2)
     .then(response => {
         if(!response.ok) {
@@ -60,9 +74,9 @@ fetch(URL2)
         return response.json();
         
     }) 
-    //Se ejecuta al final, metemos función en data para solucioniarlo
     .then(data => {
             console.log(data);
             postsArray(data);
+            paginating(data);
     })
     .catch(error => console.log(error));
