@@ -23,7 +23,7 @@ let books = [
     new Book("The La nueva mente", "Yuval Noah", 789120, 12),
     new Book("La nueva mente", "Roger Penrose", 740117, 18)
 ];
-let booksToDisplay = Array.from(books); //Copiamos el array original [...book]
+let booksToDisplay = Array.from(books); //Copiamos el array original [...book] si es objeto {...book}
 
 
 /*4. Para cada elemento del array, tendremos crear una nueva fila en la tabla con las columnas para todas las 
