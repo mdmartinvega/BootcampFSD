@@ -89,3 +89,25 @@ const http = {
 fetch(POST_URL, http)
     .then(response => response.json())
     .then(data => console.log(data))
+
+
+//Automáticamente recorrer las páginas de un API
+async function fetchAllUsers() {
+    /*     fetch(USERS_URL)
+    .then(response => response.json())
+    .then(data => console.log(data)) */
+
+    let response = await fetch(USERS_URL);
+    let data = await response.json();
+    
+    let users = [];
+
+    for (let page = 1; page <= data.total_pages; page++) {
+        response = await fetch(`${USERS_URL}?page=${page}`);
+        let newData = await response.json();
+        users = users.concat(newData.data);
+    }
+
+    usersList.innerHTML = "";
+    users.forEach(user => usersList.innerHTML += `<li>${user.email}</li>`)
+}
