@@ -107,21 +107,59 @@ for (let i = 1; i <= 10; i++) {
 Si pulso primero el botón y luego el enlace, se me abre en una nueva pestaña.*/
 
 const button8 = document.querySelector(".buttom-8");
-const link8 = document.querySelector(".a");
+const link8 = document.querySelector("a");
 
-button8.addEventListener("click", function(e){
-    link8 
-})
+button8.addEventListener("click", () => link.target = "_blank");
+
 
 /*9.Añadir un párrafo y un selectcon 5 opciones de colores: negro, blanco, rojo, amarillo, verde 
 y azul. Al seleccionar un color del select, cambiar el color del párrafo.*/
 
+const paragraph9 = document.querySelector(".parag9");
+const select = document.getElementById("selectInput");
+
+select.addEventListener("change", e => {
+    paragraph9.style.backgroundColor = e.target.value;
+})
+
 /*10.Incluir un botón que al pulsarlo genere un número aleatorio y mantenga en una lista 
 actualiza el número de elementos que se han generado, los que son pares y los que son impares.*/
+
+const button10 = document.getElementById("buttom-10");
+const list10 = document.querySelector(".list10");
+const totalNumbers = document.getElementById("totalNumbers");
+
+button10.addEventListener("click", function(e){
+    let randomNumberList = document.createElement("li");
+    const randomNumber = Math.floor(Math.random()*100);
+    randomNumberList.innerHTML = `Último número aleatorio generado: ${randomNumber}`;
+    list10.appendChild(randomNumberList);
+    document.getElementById("currentRandom").textContent = randomNumber;
+    totalNumbers.textContent ++;
+    if (randomNumber % 2 === 0){
+        document.getElementById("oddNumbers").textContent ++;
+    } else {
+        document.getElementById("evenNumbers").textContent ++;
+    }
+});
 
 /*11.Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. 
 Al pulsar el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe,
 lo añadirá al principio.*/
+
+const button11 = document.getElementById("button-11");
+const numbersPrevious = document.getElementsByTagName("li");
+const input11 = document.querySelector(".entryNumbers");
+
+button11.addEventListener("click", function(){
+    if (input11.textContent === numbersPrevious.value) {
+        input11.style.borderColor = "red";
+    } else {
+        let newItem = document.createElement("li");
+        newItem.innerText = input11.value;
+        document.getElementById("listNumbers").appendChild(newItem);
+    }
+})
 
 
 /*12.Crearemos una clase .btn en CSS que le de ciertos estilos a un botón. Al hacer clicken el 
