@@ -1,6 +1,6 @@
 import Lista from './Lista'
 
-export default function Tienda() {
+export default function Tienda(props) {
     const tienda = {
         electronica: [
             {id: 27, producto: "Televisor", marca: "LG", modelo: "XP7302", precio: 399},
@@ -20,12 +20,12 @@ export default function Tienda() {
     };
 
     return (
-        <div>
-            <Lista category="electronics" products={tienda.electronics}/>
-            <Lista />
-            <Lista />
-
-            
-        </div>
+            <div className="div">
+                <Lista category="Electrónica" products={tienda.electronica}/>
+                <Lista category="Alimentación" products={tienda.alimentacion}/>
+                <Lista category="Mascotas" products={tienda.mascotas}/>
+            </div>
+                
+        
     )
 }
