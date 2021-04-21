@@ -1,5 +1,6 @@
 
 import Tienda from './components/Tienda';
+import './App.css';
 
 
 function App() {

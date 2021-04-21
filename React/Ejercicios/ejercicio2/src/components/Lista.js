@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Lista(props) {
     return (
         <div>
@@ -7,9 +8,12 @@ export default function Lista(props) {
             <ul>
                 {
                     props.products.map(product => {
-                        return <li key={product.id}>{product.producto} precio: {product.precio}</li>
+                        return <li key={product.id}>{product.id} {product.producto} Precio: {product.precio}</li>
+                        
                     })
+                    
                 }
+               
             </ul>
         </div>
     );
