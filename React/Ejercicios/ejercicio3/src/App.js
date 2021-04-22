@@ -27,11 +27,13 @@ function App(props) {
   return (
     <div className="container">
       <h3 className="mt-5 mb-5 h3">Lista de contactos</h3>
-      <ContactList contacts={contacts}/>
+      <ContactList contacts={contacts} setContacts={setContacts}
+      />
       <h3 className="mt-5 mb-5 h3">Nuevo contacto</h3>
 
       
       <Form setContacts={setContacts}/>
+      
       
     </div>
   );

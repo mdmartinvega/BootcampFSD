@@ -1,7 +1,12 @@
 import React from 'react'
 
 
-export default function ContactList(props) {
+export default function ContactList(props, setContacts) {
+
+     const deleteContact = (e) => {
+         props.setContacts = props.setContacts.filter(item => item.id !== e.target.id)
+         setContacts();
+     }
 
     return (
         <div className="row">
@@ -14,7 +19,7 @@ export default function ContactList(props) {
                         <li className="list-group-item">{contact.apellidos}</li>
                         <li className="list-group-item">{contact.telefono}</li>
                         <li className="list-group-item">{contact.direccion}, {contact.cp}, {contact.ciudad}</li>
-                        <li className="list-group-item"><button type="button" class="btn btn-warning">Eliminar</button></li>
+                        <li className="list-group-item"><button type="button" onClick={()=>(deleteContact())} class="btn btn-warning">Eliminar</button></li>
                     </ul>
                 }
                     )
