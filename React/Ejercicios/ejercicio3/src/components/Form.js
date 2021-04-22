@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import ContactList from './ContactList';
+
 
 export default function Form(props) {
 
@@ -71,10 +71,10 @@ export default function Form(props) {
             <form className="form-group" onSubmit={submit}>
             <input type="text" value={nombre} onChange={handleNombre} className="form-control m-3" placeholder="Introduce un nombre" />
             <input type="text" value={apellidos} onChange={handleApellidos} className="form-control m-3" placeholder="Introduce los apellidos" />
-            <input type="text" value={telefono} onChange={handleTelefono} className="form-control m-3" placeholder="Introduce la dirección" />
-            <input type="text" value={direccion} onChange={handleDireccion} className="form-control m-3" placeholder="Introduce la provincia" />
+            <input type="text" value={telefono} onChange={handleTelefono} className="form-control m-3" placeholder="Introduce el teléfono" />
+            <input type="text" value={direccion} onChange={handleDireccion} className="form-control m-3" placeholder="Introduce la dirección" />
             <input type="text" value={cp} onChange={handleCp} className="form-control m-3" placeholder="Introduce el código postal" />
-            <input type="text" value={ciudad} onChange={handleCiudad} className="form-control m-3" placeholder="Introduce el número de teléfono" />
+            <input type="text" value={ciudad} onChange={handleCiudad} className="form-control m-3" placeholder="Introduce la ciudad" />
             <input type="submit" className="btn btn-success" value="Registrar"/>
             </form>
             
