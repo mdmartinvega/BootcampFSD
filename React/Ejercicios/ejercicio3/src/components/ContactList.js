@@ -4,12 +4,12 @@ import React from 'react'
 export default function ContactList(props) {
 
     return (
-        <div className="row align-items-start d-flex justify-content-around">
+        <div className="row">
             {
-                props.data.map(contact => {
+                props.contacts.map((contact, index) => {
 
-                    return <ul key={contact.id} className="list-group w-25">
-                        <li className="list-group-item active h6" aria-current="true">Contacto {contact.id}</li>
+                    return <ul key={contact.telefono} className="list-group mb-3 col-6 w-25">
+                        <li className="list-group-item active h6" aria-current="true">Contacto {index}</li>
                         <li className="list-group-item">{contact.nombre}</li>
                         <li className="list-group-item">{contact.apellidos}</li>
                         <li className="list-group-item">{contact.telefono}</li>
