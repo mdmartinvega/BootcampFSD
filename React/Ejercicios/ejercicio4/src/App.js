@@ -1,24 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-import ToDoList from './components/ToDoList';
+import ToDoLists from './components/ToDoLists';
 
 function App() {
 
-  const initialState = [
-    {userId: 0, title:"Hacer los deberes de React", completed: true},
-    {userId: 1, title:"Comprar masa para pizza", completed: false},
-    {userId: 2, title:"Sacar a Luna de paseo", completed: false}
-  ]
+  const URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
 
-  const [toDoList, setToDoLists] = useState(initialState);
+  const initialState = [];
+  const [toDoList, setToDoList] = useState(initialState);
 
-  const url = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
+  useEffect(() => {
+   fetch(URL)
+    .then(response => response.json())
+    .then(data => setToDoList(data.splice(0, 20)));
+  }, []);
+  
+
+
 
 
   return (
     <div className="App">
-    <h3>To-Do List</h3>
-    <ToDoList toDoList = {toDoList}/>
+    <h3 className="mt-4 mb-4">To-Do List</h3>
+    <ToDoLists toDoList = {toDoList} setToDoList = {setToDoList}/>
     
     </div>
   );
