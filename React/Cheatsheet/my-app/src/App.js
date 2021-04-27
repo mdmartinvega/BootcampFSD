@@ -4,6 +4,7 @@ import Counter from "./components/Counter"
 import FirstComponent, {SecondComponent, ThirdComponent} from "./components/FirstComponent"
 import UseContextComponent from './components/UseContextComponent';
 import {useState, createContext} from 'react'
+import Router from './Router';
 
 //Lo añadimos fuera porque es algo que vamos a exportar
 
@@ -38,9 +39,10 @@ function App() {
       <ThirdComponent otherAttr="[1, 2, 3]"/> */}
 
 
-      <GlobalContext.Provider value="Soy un string guardado en un contexto">
+      {/* <GlobalContext.Provider value="Soy un string guardado en un contexto">
       <UseContextComponent />
-      </GlobalContext.Provider>
+      </GlobalContext.Provider> */}
+      <Router />
     </div>
   );
 }
