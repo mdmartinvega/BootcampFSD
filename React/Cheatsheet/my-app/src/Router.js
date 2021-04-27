@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Index from './pages/Index';
 import Dashboard from './pages/Dashboard';
 import Record from './pages/Record';

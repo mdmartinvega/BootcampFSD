@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import '../App.css';
+// import '../App.css';
 import ToDoLists from '../components/ToDoLists';
 import Input from '../components/Input';
 
-function Ejercicio4() {
+function Ejercicio4(props) {
 
   const URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
 
@@ -19,17 +19,11 @@ function Ejercicio4() {
   }, []);
   
 
-
-
-
   return (
     <div className="App">
     <h3 className="mt-4 mb-4">To-Do List</h3>
     <Input setToDoList = {setToDoList}/>
     <ToDoLists toDoList = {toDoList} setToDoList = {setToDoList}/>
-
-    
-    
     </div>
   );
 }

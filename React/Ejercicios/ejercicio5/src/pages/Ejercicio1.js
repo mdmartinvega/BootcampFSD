@@ -1,6 +1,6 @@
 
 import Card from "../components/Card";
-import '../App.css';
+// import '../App.css';
 
 function Ejercicio1() {
   return (

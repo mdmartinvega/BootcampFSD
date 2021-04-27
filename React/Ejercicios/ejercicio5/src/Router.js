@@ -4,16 +4,20 @@ import Ejercicio1 from './pages/Ejercicio1';
 import Ejercicio2 from './pages/Ejercicio2';
 import Ejercicio3 from './pages/Ejercicio3';
 import Ejercicio4 from './pages/Ejercicio4';
+import Error from './pages/Error';
+import Index from './pages/Index';
 
 export default function Router() {
     return (
         <div>
             <BrowserRouter>
 
-                <NavLink to="/ejercicio1" style={{marginRight: "20px"}}>Ejercicio 1</NavLink>
-                <NavLink to="/ejercicio2" style={{marginRight: "20px"}}>Ejercicio 2</NavLink>
-                <NavLink to="/ejercicio3">Ejercicio 3</NavLink>
-                <NavLink to="/ejercicio4">Ejercicio 4</NavLink>
+                <nav className="navbar navbar-dark bg-dark text-white">
+                    <NavLink to="/ejercicio1" activeClassName="active text-success">Ejercicio 1</NavLink>
+                    <NavLink to="/ejercicio2" activeClassName="active text-success">Ejercicio 2</NavLink>
+                    <NavLink to="/ejercicio3" activeClassName="active text-success">Ejercicio 3</NavLink>
+                    <NavLink to="/ejercicio4" activeClassName="active text-success">Ejercicio 4</NavLink>
+                </nav>
 
                 <Switch>
                     <Route exact path="/ejercicio1" component={Ejercicio1}/>
@@ -21,8 +25,12 @@ export default function Router() {
                     <Route path="/ejercicio3" component={Ejercicio3}/>
                     <Route path="/ejercicio4" component={Ejercicio4}/>
 
-                    <Route component={Error}/>
+                    <div className="error">
+                        <Route exact path="/" component={Index}/>
+                        <Route component={Error}/>
+                    </div>
                 </Switch>
+                
             </BrowserRouter>
         </div>
     )

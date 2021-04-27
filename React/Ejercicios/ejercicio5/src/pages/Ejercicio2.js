@@ -1,9 +1,8 @@
-
 import Tienda from '../components/Tienda';
-import '../App.css';
+// import '../App.css';
 
 
-function Ejercicio2() {
+function Ejercicio2(props) {
   return (
     <div className="App">
       <Tienda />

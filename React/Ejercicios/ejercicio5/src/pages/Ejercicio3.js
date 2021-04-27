@@ -1,4 +1,4 @@
-import '../App.css';
+// import '../App.css';
 import ContactList from '../components/ContactList';
 import Form from '../components/Form'
 import { useState } from "react";
@@ -14,7 +14,7 @@ import { useState } from "react";
 
 // )
 
-function Ejercicio3(props) {
+function Ejercicio3() {
 
   const initialState =  [
         {id: 0, nombre: "Laura", apellidos: "Martín Vega", direccion: "Hortaleza 25", ciudad: "Madrid", cp: 28005, telefono: "623123456"},
