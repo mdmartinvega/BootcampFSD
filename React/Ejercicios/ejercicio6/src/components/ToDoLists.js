@@ -1,7 +1,13 @@
-export default function ToDoLists(props) {
+import { useContext} from 'react';
+import { GlobalContext} from '../App';
+
+
+export default function ToDoLists() {
+
+    const { toDoList, setToDoList } = useContext(GlobalContext);
 
     const deleteToDo = (title) => {
-        props.setToDoList(props.toDoList.filter(toDo => toDo.title !== title));
+        setToDoList(toDoList.filter(toDo => toDo.title !== title));
         
     }
 
@@ -10,9 +16,9 @@ export default function ToDoLists(props) {
         //If para poder eliminar el botón ya que si no prima el 
         //click del li
         if(e.target.tagName !== "BUTTON") {
-            const newToDoList = [...props.toDoList];
+            const newToDoList = [...toDoList];
             newToDoList[index].completed = !newToDoList[index].completed;
-            props.setToDoList(newToDoList);
+            setToDoList(newToDoList);
         }
     }
    
@@ -20,7 +26,7 @@ export default function ToDoLists(props) {
     return (
         <div className="text-left">
             {
-            props.toDoList.map((thing, index) => {
+            toDoList.map((thing, index) => {
                 return <ul className="list-group">
                     <li className={thing.completed?"list-group-item list-group-item-secondary" : "list-group-item"} 
                     onClick={e => toggleEffect(e, index)}>To Do: {index}: {thing.title}{thing.completed}

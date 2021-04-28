@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { GlobalContext } from "../App";
 
 
-export default function Form(props) {
+export default function Form() {
+
+    const {setContacts} = useContext(GlobalContext);
 
     const [nombre, setNombre] = useState("");
     const [apellidos, setApellidos] = useState("");
@@ -49,7 +52,7 @@ export default function Form(props) {
         //setContacts([...contacts, newContact]) // Necesitaría recibir contacts
 
 
-        props.setContacts(currentContacts => [...currentContacts, newContact]);
+        setContacts(currentContacts => [...currentContacts, newContact]);
         //La función recibe el array actual y va a devolver la copia del array
         //con el contacto nuevo, es decir, el nuevo array.
 
