@@ -5,6 +5,8 @@ elementos string en una sola línea.*/
 const myArray = ["one", "two", "three", "four", "five"];
 console.log(myArray);
 
+
+
 console.log("********Apdo 2*****************");
 /*2. Define un array inicialmente vacío. 
 Añade tres elementos de tipo number posteriormente. 
@@ -12,27 +14,38 @@ Elimina por completo el primero y añade dos nuevos números
 al inicio. En cada paso, imprime la longitud y el array
 entero por consola utilizando un string template del tipo: `Longitud: ${}`.*/
 
-const oneArray = [];
-console.log(`Longitud: ${oneArray.length}`, oneArray);
-oneArray.push(1, 2, 3);
-console.log(`Longitud: ${oneArray.length}`, oneArray);
-oneArray.splice(0, 1, -3, -2);
-console.log(`Longitud: ${oneArray.length}`, oneArray);
+const myArrayTwo = [];
+console.log(`Longitud: ${myArrayTwo.length}`, myArrayTwo);
+
+myArrayTwo.push (1, 2, 3);
+console.log(`Longitud: ${myArrayTwo.length}`, myArrayTwo);
+
+myArrayTwo.splice(0, 1, -2, -3)
+console.log(`Longitud: ${myArrayTwo.length}, ${myArrayTwo}`);
+
+
 
 console.log("********Apdo 3*****************");
 /*3. Escribe una función nombrada que devuelva true si 
 el argumento dado es de tipo boolean y false en
 caso contrario. */
 
-const booleanCheck = argumento => typeof argumento === "boolean";
+function booleanCheck(argument) {
+    return typeof argument === "boolean" ? true : false;  
+}
 
 console.log(booleanCheck(true));
 console.log(booleanCheck("true"));
+console.log(booleanCheck(null));
+console.log(booleanCheck(undefined));
+console.log(booleanCheck(false));
 console.log(booleanCheck(3));
+
+
 
 function booleanCheck2 (argumento) {
     return typeof argumento === "boolean";
-}
+};
 
 console.log(booleanCheck2(true));
 console.log(booleanCheck2("true"));
@@ -43,52 +56,58 @@ console.log("********Apdo 4*****************");
 /*4. Escribe una función que devuelva la longitud de un 
 string recibido por argumento.*/
 
+function returnLength(string) {
+    return string.length;
+};
+
+console.log(returnLength("holis"));
+
+//Arrow function
 const longFunction = value => value.length;
 
 console.log(longFunction("Holassss"));
+
 
 console.log("********Apdo 5*****************");
 /*5. Crea una función de flecha que reciba una cantidad 
 de minutos y lo devuelva convertido en segundos.*/
 
-const minutsFunction = value => sseconds = value * 60;
-console.log(`Son ${minutsFunction(2)} segundos`);
+const fromMinutesToSeconds = minutes => minutes * 60;
+console.log(`Son ${fromMinutesToSeconds(1)} segundos`);
+
 
 
 console.log("********Apdo 6*****************");
 /*6. Crea una función que reciba un número y devuelva el 
 siguiente número par. (Si él es par, lo devolverá directamente).*/
 
-const parNumber = function(value) {
-    if (value % 2 === 0) {
-        return value;
-    } else {
-        return value + 1;
-    }
-};
-console.log(parNumber(8));
-console.log(parNumber(7));
+const evenNumber = number => number % 2 === 0 ? number : number + 1;
+console.log(evenNumber(2));
+console.log(evenNumber(3));
+console.log(evenNumber(0));
+
+
 
 console.log("********Apdo 7*****************");
 /*7. Crea una función que reciba una edad y devuelva la 
 cantidad de días que esa persona ha vivido. Puedes
 obviar los años bisiestos.*/
 
-const ageFunction = value =>  value * 365;
-console.log(`Has vivido ${ageFunction(38)} días`);
+const agePerson = age => age * 365;
+console.log(agePerson(1));
+console.log(`Has vivido ${agePerson(38)} días`);
+
+
 
 console.log("********Apdo 8*****************");
 /*8. Crea una función que reciba un array y devuelva su 
 último elemento. Prueba tu función con varios arrays
 de diferentes longitudes.*/
 
-const myArray3 = function(array) {
-    
-    return array[array.length-1];
-}
-console.log(myArray3([1, 2, 3, 4, 5]));
-console.log(myArray3([1, 4, 5]));
-console.log(myArray3([1]));
+const lastElement = array => array[array.length-1];
+console.log(lastElement([1, 2, 3]));
+
+
 
 console.log("********Apdo 9*****************");
 /* 9. Un granjero necesita contar la cantidad de patas de los animales en susdiferentes granjas muy
@@ -107,21 +126,24 @@ console.log("********Apdo 10*****************");
 /*10. Crea una función que determine si dos datos recibidos por argumentos 
 son del mismo tipo.*/
 
-let sameType = (data1, data2) =>
-typeof data1 === typeof data2 ? `Mismo tipo` : `Diferente tipo`;
-console.log(sameType(1, 1));
-console.log(sameType(1, "string"));
-console.log(sameType(undefined, null));
-console.log(sameType(true, false));
+const checkDatas = (data1, data2) => typeof data1 === typeof data2 ? "Mismo tipo" : "Diferente tipo";
+
+console.log(checkDatas(2, 3));
+console.log(checkDatas(null, undefined));
+console.log(checkDatas("holis", 3));
+console.log(checkDatas(true, false));
+console.log(checkDatas(NaN, 0));
+
+
 
 console.log("********Apdo 11*****************");
 /*11. Crea una función que reciba un string con una frase y devuelva un array 
 donde cada elemento será una palabra de la frase original. Investigar método 
 existente de los strings para este fin.*/
 
-const splitFunction = value =>
-    value.split(" ");
-console.log(splitFunction("Hoy es lunes"));
+const returnWords = string => string.split(" ");
+console.log(returnWords("Bienvenido a CodeSpace"));
+
 
 console.log("********Apdo 12*****************");
 /*12. Inicializa dos objetos, address1 y address2 con las 

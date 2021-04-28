@@ -5,6 +5,7 @@ export default function ToDoLists(props) {
     const deleteToDo = (title) => {
         props.setToDoList(props.toDoList.filter(toDo => toDo.title !== title));
         
+        
     }
 
     const toggleEffect = (e, index) => {
