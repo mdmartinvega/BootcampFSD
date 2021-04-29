@@ -20,7 +20,6 @@ export default function Router() {
                     <NavLink to="/ejercicio4" activeClassName="active text-success">Ejercicio 4</NavLink>
                 </nav>
 
-            
                 <Switch>
                     <Route exact path="/ejercicio1" component={Ejercicio1}/>
                     <Route path="/ejercicio2" component={Ejercicio2}/>
@@ -30,8 +29,6 @@ export default function Router() {
                     <Route component={Error}/>
                 
                 </Switch>
-
-                
                 
             </BrowserRouter>
         </div>

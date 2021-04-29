@@ -18,10 +18,6 @@ function App() {
     .then(data => setToDoList(data.splice(0, 20)));
   }, []);
   
-
-
-
-
   return (
     <div className="App">
     <h3 className="mt-4 mb-4">To-Do List</h3>
