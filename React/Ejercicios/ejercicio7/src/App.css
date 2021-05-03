@@ -1,21 +1,89 @@
+
+/* General */
 .App {
   text-align: center;
-  background-color: rgb(95, 95, 95);
+  background-color: rgb(5, 5, 5);
+  font-family: 'Courier New', Courier, monospace;
 }
 
+/* Navbar */
+
+.navbar {
+  height: 15vh;
+  background-color: rgb(5, 5, 5);
+  margin-bottom: 20px;
+}
+
+/* Upcomings page */
+.container-cards {
+  background-color: rgb(58, 58, 58);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: auto;
+}
 .card {
-  background-color: rgb(201, 198, 201);
+  width: 300px;
+  position: relative;
+  
+}
+.card:hover {
+  border: 1px solid rgb(0, 225, 255);
+  border-radius: 10px;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card .btn {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.father-average {
+  color: rgb(0, 225, 255);
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: bold;
 }
 
+.card .title {
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* FilmDetailsResults page */
+
+.filmdetails {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 100px;
+  text-align: left;
+  width: 80%;
+  color: white;
+}
+
+.filmdetails img {
+  width: 400px;
+  padding-right: 50px;
+
+}
+
+/* Footer */
+.footer {
+  height: 15vh;
+  color: rgb(80, 80, 80);
+  padding: 15px;
+}
 
