@@ -19,6 +19,7 @@ export default function FilmDetailsResults() {
             <img src={`https://image.tmdb.org/t/p/w500/${filmDetails.poster_path}`} className="card-img-top h-50" alt="..." />
             <div>
                 <p>{filmDetails.original_title}</p>
+                <p>{filmDetails.tagline}</p>
                 <p>Fecha de estreno: {filmDetails.release_date}</p>
                     <div>
                         {filmDetails.genres?.map(genre => {

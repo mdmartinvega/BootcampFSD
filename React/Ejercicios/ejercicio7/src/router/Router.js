@@ -9,6 +9,7 @@ export default function Router() {
     return (
         <div className="router">
             <Navbar />
+            
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Index}/>

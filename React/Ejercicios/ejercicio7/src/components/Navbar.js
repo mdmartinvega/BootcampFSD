@@ -1,7 +1,9 @@
+import Input from './Input';
+
 export default function Navbar() {
     return (
         <div className="navbar">
-            <p>Coming soon</p>
+            <Input />
         </div>
     )
 }

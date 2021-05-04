@@ -2,7 +2,7 @@ import Card from '../components/Card';
 
 export default function Upcomings({upcomingsMovies}) {
     return  (
-        <div className="container-cards">
+        <div className="upcomings container-cards">
             {
                 upcomingsMovies.map(movie => {
                     return (
