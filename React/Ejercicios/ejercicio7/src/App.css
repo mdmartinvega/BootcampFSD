@@ -28,6 +28,7 @@
 .card {
   width: 300px;
   position: relative;
+  border: 1px solid transparent;
   
 }
 .card:hover {

@@ -1,7 +1,5 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-
 
 export default function FilmDetailsResults() {
     
@@ -14,7 +12,6 @@ export default function FilmDetailsResults() {
         fetch(DETAILS_URL)
         .then(response => response.json())
         .then(data => setFilmDetails(data));
-        
         }, []); 
 
     return (
@@ -23,15 +20,13 @@ export default function FilmDetailsResults() {
             <div>
                 <p>{filmDetails.original_title}</p>
                 <p>Fecha de estreno: {filmDetails.release_date}</p>
-                {/* <div>
-                    {filmDetails.genres.map(genre => {
-                        return `${genre.name}`;
-                    })  
-                    }
-                </div> */}
-                <p>{filmDetails.overview}</p>
-               
-                
+                    <div>
+                        {filmDetails.genres?.map(genre => {
+                            return `"${genre.name}" `;
+                        })  
+                        }
+                    </div> 
+                <p>{filmDetails.overview}</p>    
             </div>
         </div>
     )
