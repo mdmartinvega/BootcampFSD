@@ -5,6 +5,8 @@ import FilmDetailsResults from '../pages/FilmDetailsResults';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Error from '../pages/Error';
 
+
+
 export default function Router() {
     return (
         <div className="router">
