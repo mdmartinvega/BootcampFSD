@@ -1,6 +1,7 @@
 import Upcomings from '../components/Upcomings';
 import { useState, useEffect } from 'react';
 
+
 export default function Index() {
 
 
@@ -16,7 +17,8 @@ export default function Index() {
 
     return (
         <div className="index">
-             <Upcomings upcomingsMovies={upcomingsMovies} setUpcomingsMovies={setUpcomingsMovies} />
+            
+            <Upcomings upcomingsMovies={upcomingsMovies} setUpcomingsMovies={setUpcomingsMovies} />
         </div>
     )
 }

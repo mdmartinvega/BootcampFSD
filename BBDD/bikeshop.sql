@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-05-2021 a las 14:00:27
+-- Tiempo de generación: 05-05-2021 a las 13:56:06
 -- Versión del servidor: 8.0.23-0ubuntu0.20.04.1
 -- Versión de PHP: 7.4.3
 
@@ -36,6 +36,15 @@ CREATE TABLE `bikes` (
   `price` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `bikes`
+--
+
+INSERT INTO `bikes` (`id`, `model`, `brand`, `type`, `price`) VALUES
+(1, 'Vista', 'Cube', 'Mountain', 1500),
+(2, 'Slash', 'Trek', 'Mountain', 3699),
+(3, 'ECaliber', 'Trek', 'Road', 9999);
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +60,15 @@ CREATE TABLE `clients` (
   `email` varchar(64) DEFAULT NULL,
   `phone_number` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `clients`
+--
+
+INSERT INTO `clients` (`id`, `dni`, `bike_id`, `name`, `lastname`, `email`, `phone_number`) VALUES
+(1, '123456789V', 1, 'John', 'Smith', 'Jsmit@gmail.com', '+6 456789122'),
+(2, '456456789I', 2, 'Mary', 'Lopez', 'Mary@gmail.com', '+34 1235646589'),
+(5, '123456789T', 3, 'Lolila', 'Martin', 'mjhgf@gmail.com', '+34 123456789');
 
 -- --------------------------------------------------------
 
@@ -69,7 +87,10 @@ CREATE TABLE `components` (
 --
 
 INSERT INTO `components` (`id`, `name`, `price`) VALUES
-(1, 'cuadro', 60);
+(1, 'Cuadro', 120),
+(2, 'Tires', 50),
+(3, 'Handlebar', 75),
+(4, 'Brakes', 45);
 
 -- --------------------------------------------------------
 
@@ -88,7 +109,10 @@ CREATE TABLE `offers` (
 --
 
 INSERT INTO `offers` (`id`, `component_id`, `discount`) VALUES
-(1, 1, 25);
+(1, 1, 25),
+(2, 2, 50),
+(3, 2, 5),
+(4, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -103,6 +127,16 @@ CREATE TABLE `repairs` (
   `cost` float DEFAULT NULL,
   `time_spent` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `repairs`
+--
+
+INSERT INTO `repairs` (`id`, `client_id`, `component_id`, `cost`, `time_spent`) VALUES
+(1, 1, 1, 100, 3),
+(2, 1, 2, 150, 2),
+(3, 2, 4, 250, 5),
+(5, 5, 2, 50, 4);
 
 --
 -- Índices para tablas volcadas
@@ -150,31 +184,31 @@ ALTER TABLE `repairs`
 -- AUTO_INCREMENT de la tabla `bikes`
 --
 ALTER TABLE `bikes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `repairs`
 --
 ALTER TABLE `repairs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

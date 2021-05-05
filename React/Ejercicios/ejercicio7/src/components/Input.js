@@ -11,11 +11,11 @@ export default function Input() {
 
     useEffect(() => {
         if (input) {
-        fetch(`${ALLMOVIES_URL}${input}`)
-        .then(response => response.json())
-        .then(data => setSearchedMovies(data.results));
+            fetch(`${ALLMOVIES_URL}${input}`)
+            .then(response => response.json())
+            .then(data => setSearchedMovies(data.results));
         }
-        }, [input]); 
+    }, [input]); 
 
     return (
     <div className="input">
