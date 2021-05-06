@@ -30,9 +30,20 @@ export default function Index() {
     }, [input]); 
     
     return (
-        <div className="index">
-            <SearchedResults searchedMovies={searchedMovies} setSearchedMovies={setSearchedMovies} input={input} setInput={setInput}/>
-            <Upcomings upcomingsMovies={upcomingsMovies} setUpcomingsMovies={setUpcomingsMovies} />
+        <div className="input">
+            <form><input 
+            value={input} 
+            onChange={e => setInput(e.target?.value)} 
+            placeholder="¿Qué película quieres buscar?"/>
+            </form>
+
+            <div className="index">{
+                input
+                ? <SearchedResults searchedMovies={searchedMovies} setSearchedMovies={setSearchedMovies} input={input} setInput={setInput}/>
+                : <Upcomings upcomingsMovies={upcomingsMovies} setUpcomingsMovies={setUpcomingsMovies} />
+            }
+            
+            </div>
         </div>
     )
 }
