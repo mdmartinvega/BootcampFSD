@@ -1,6 +1,8 @@
 import Card from '../components/Card';
 
 export default function Upcomings({upcomingsMovies}) {
+
+    
     return  (
         <div className="upcomings container-cards">
             {
@@ -11,5 +13,6 @@ export default function Upcomings({upcomingsMovies}) {
                 })  
             }      
         </div>
-        )
+    )
+    
 }
