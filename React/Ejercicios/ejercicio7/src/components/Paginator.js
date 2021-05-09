@@ -1,20 +1,21 @@
 import React from 'react'
 
-export default function Paginator({page, setPage, upcomingsMovies}) {
+export default function Paginator({upcomingsMovies, setPage}) {
+ let totalPages = [];
 
-    const changePage = (e) => {
-        if (e.target.className === "previous" && page > 1) {
-            page--;
-        } else if (e.target.className ==="next" && page < upcomingsMovies.length) {
-            page++;
-            
-        }
-    }
-
+ for (let index = 1; index <= upcomingsMovies.total_pages; index++) {
+     totalPages.push(index);
+ }
     return (
-        <div>
-           <button onClick={e => setPage(e.target.value)}  className=" previous">Anterior</button>
-           <button onClick={e => setPage(e.target.value)} className="next">Siguiente</button> 
+        <div className="buttons">
+                {
+                totalPages.map(page => {
+                    return (
+                        <button onClick={()=>setPage(page)}>{`${page}`}</button>
+                        
+                    )
+                })   
+            } 
         </div>
     )
 }

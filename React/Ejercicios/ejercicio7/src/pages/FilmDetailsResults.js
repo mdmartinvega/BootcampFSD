@@ -18,16 +18,17 @@ export default function FilmDetailsResults() {
         <div className="filmdetails">
             <img src={`https://image.tmdb.org/t/p/w500/${filmDetails.poster_path}`} className="card-img-top h-50" alt="..." />
             <div>
-                <p>{filmDetails.original_title}</p>
-                <p>{filmDetails.tagline}</p>
-                <p>Fecha de estreno: {filmDetails.release_date}</p>
-                    <div>
+                <p className="titleDetails">{filmDetails.title}</p>
+                <p className="tagDetails">{filmDetails.tagline}</p>
+                <p className="releaseDetails">Fecha de estreno: {filmDetails.release_date}</p>
+                    <div className="genreDetails">
                         {filmDetails.genres?.map(genre => {
-                            return `"${genre.name}" `;
+                            return <div> {`${genre.name} `} </div>;
                         })  
                         }
                     </div> 
-                <p>{filmDetails.overview}</p>    
+                <p className="overviewDetails">{filmDetails.overview}</p>  
+                <a href={`http://www.imdb.com/title/${filmDetails.imdb_id}`}><button className="logo"></button></a>  
             </div>
         </div>
     )

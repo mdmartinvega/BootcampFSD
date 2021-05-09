@@ -14,7 +14,7 @@ export default function Card({movie}) {
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="..." />
                 <p class="description">{movie.overview}</p>
             </div>
-            <p className="title">{movie.original_title}</p>
+            <p className="title">{movie.title}</p>
             {/* <p className="date">{movie.release_date}</p> */}
             <div className="father-average">
                 <p className="average">{movie.vote_average}</p>

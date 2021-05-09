@@ -1,20 +1,28 @@
-
+@import url(https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
 /* General */
 .App {
   text-align: center;
   background-color: rgb(5, 5, 5);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Montserrat';
 }
 
 /* Navbar */
 
 .navbar {
-  height: 15vh;
+  height: 5vh;
   background-color: rgb(5, 5, 5);
   margin-bottom: 20px;
 }
 
 /* Upcomings page */
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.5em;
+}
 .container-cards {
   background-color: rgb(58, 58, 58);
   padding: 30px;
@@ -22,14 +30,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  width: 100%;
   margin: auto;
 }
 .card {
   width: 300px;
   position: relative;
   border: 1px solid transparent;
-  
+  border-radius: 10px;
 }
 .card:hover {
   border: 1px solid rgb(0, 225, 255);
@@ -55,14 +62,26 @@
   z-index: -1;
 }
 
-.imageDescription:hover, .description:hover{
+.imageDescription:hover {
   opacity: 0.09;
 }
 
 .card .btn {
   position: absolute;
   right: 10px;
-  bottom: 15px;
+  bottom: 25px;
+  background-color: black;
+  border-radius: 50%;
+  border: black;
+  padding: 5px;
+  color: white;
+  width: 25px;
+  font-weight: bold;
+}
+
+.card .btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px turquoise;
 }
 
 .father-average {
@@ -76,17 +95,50 @@
 .card .title {
   position: absolute;
   color: white;
-  bottom: 20px;
+  top: 30px;
   left: 10px;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 1.5em;
+  opacity: 0.8;
 }
+
+
+
+/* Paginator */
+
+.buttons {
+  background-color: rgb(58, 58, 58);
+  padding-bottom: 40px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px turquoise;
+}
+
+.buttons button:hover {
+ background-color: turquoise;
+ cursor: pointer;
+ color: black;
+ border-radius: 10px;
+}
+
+
 
 /* FilmDetailsResults page */
 
 .filmdetails {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 50px 100px;
   text-align: left;
   width: 80%;
@@ -96,17 +148,69 @@
 .filmdetails img {
   width: 400px;
   padding-right: 50px;
-
 }
 
+.titleDetails {
+  font-size: 1.9em;
+  font-weight: 600;
+}
+.tagDetails {
+  font-size: 1.2em;
+}
+
+.genreDetails {
+  display: flex;
+  padding: 15px 0px;
+  
+}
+.genreDetails div {
+  background-color: turquoise;
+  padding: 8px;
+  border-radius: 10px;
+  color: black;
+  margin-right: 10px;
+}
+
+.logo {
+  background-image: url(components/images.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 75px;
+  border-radius: 10px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+/* Input */
+
+form {
+  padding: 10px;
+  
+}
 .input input{
-
+  padding: 10px;
+  width: 20%;
+  border-radius: 10px;
+  font-family: 'Montserrat';
+  color: rgb(33, 34, 34);
+  font-size: 0.9em;
 }
+
+.input input:focus {
+  box-shadow: 0px 0px 10px turquoise;
+  outline: none
+}
+
 
 /* Footer */
 .footer {
-  height: 15vh;
+  height: 10vh;
   color: rgb(80, 80, 80);
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
