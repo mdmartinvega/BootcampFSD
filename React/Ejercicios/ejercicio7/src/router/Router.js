@@ -4,9 +4,6 @@ import Footer from '../components/Footer'
 import FilmDetailsResults from '../pages/FilmDetailsResults';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-
-
-
 export default function Router() {
     return (
         <div className="router">

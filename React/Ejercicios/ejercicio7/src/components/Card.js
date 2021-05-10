@@ -6,9 +6,8 @@ export default function Card({movie}) {
     function handleClick(event) {
         history.push(`/movie/${event.target.id}`);
     }
-
+    
     return (
-        
         <div className="card">
             <div className="imageDescription">
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="..." />

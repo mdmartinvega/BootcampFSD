@@ -1,7 +1,5 @@
-import Upcomings from '../components/Upcomings';
+import Input from '../components/Input';
 import { useState, useEffect } from 'react';
-import SearchedResults from '../components/SearchedResults';
-import Paginator from '../components/Paginator';
 
 export default function Index() {
 
@@ -15,7 +13,7 @@ export default function Index() {
     .then(response => response.json())
     .then(data => setUpcomingsMovies(data));
     
-    }, [page]); 
+    }, [page, setUpcomingsMovies, MOVIES_URL, DETAILS_URL]); 
 
     const[searchedMovies, setSearchedMovies] = useState([]);
     const[input, setInput] = useState("");
@@ -29,28 +27,11 @@ export default function Index() {
             .then(response => response.json())
             .then(data => setSearchedMovies(data.results));
         }
-    }, [input]); 
+    }, [input, setSearchedMovies, ALLMOVIES_URL]); 
     
     return (
-        <div className="input">
-             <form><input 
-            value={input} 
-            onChange={e => setInput(e.target.value)} 
-            placeholder="What film would you like to watch?"/>
-            </form>
-
-            <div className="index">{
-                input
-                ? <SearchedResults searchedMovies={searchedMovies} setSearchedMovies={setSearchedMovies} input={input} setInput={setInput}/>
-                : <Upcomings upcomingsMovies={upcomingsMovies} setUpcomingsMovies={setUpcomingsMovies} />
-                
-            } 
-            <Paginator upcomingsMovies={upcomingsMovies} page={page} setPage={setPage}/>      
-            </div>          
-        </div>
+        <Input input = {input} setInput={setInput} searchedMovies={searchedMovies} setSearchedMovies = {setSearchedMovies} upcomingsMovies = {upcomingsMovies} setUpcomingsMovies = {setUpcomingsMovies} page = {page} setPage = {setPage}/>
     )
-    
-    
 }
 
 
