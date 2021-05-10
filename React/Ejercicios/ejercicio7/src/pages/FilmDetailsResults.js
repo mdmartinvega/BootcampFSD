@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { IMBD, IMAGE_URL } from '../Settings';
 
 export default function FilmDetailsResults() {
     
@@ -12,11 +13,11 @@ export default function FilmDetailsResults() {
         fetch(DETAILS_URL)
         .then(response => response.json())
         .then(data => setFilmDetails(data));
-        }, []); 
+        }, [DETAILS_URL]); 
 
     return (
         <div className="filmdetails">
-            <img src={`https://image.tmdb.org/t/p/w500/${filmDetails.poster_path}`} className="card-img-top h-50" alt="..." />
+            <img src={`${IMAGE_URL}${filmDetails.poster_path}`} className="card-img-top h-50" alt="..." />
             <div>
                 <p className="titleDetails">{filmDetails.title}</p>
                 <p className="tagDetails">{filmDetails.tagline}</p>
@@ -28,7 +29,7 @@ export default function FilmDetailsResults() {
                         }
                     </div> 
                 <p className="overviewDetails">{filmDetails.overview}</p>  
-                <a href={`http://www.imdb.com/title/${filmDetails.imdb_id}`}><button className="logo"></button></a>  
+                <a href={`${IMBD}${filmDetails.imdb_id}`}><button className="logo"></button></a>  
             </div>
         </div>
     )
