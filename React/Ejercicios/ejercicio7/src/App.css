@@ -29,14 +29,15 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin: auto;
 }
 .card {
-  width: 300px;
-  position: relative;
-  border: 1px solid transparent;
+  width: 250px;
+  border: 1px solid black;
   border-radius: 10px;
+  text-align: left;
+  height: 70vh;
 }
 .card:hover {
   border: 1px solid rgb(0, 225, 255);
@@ -44,63 +45,43 @@ h1 {
 }
 .card img {
   width: 100%;
-  border-radius: 10px;
-  height: 100%;
-}
-
-.imageDescription {
-  position: relative;
-  display: inline-block;
-}
-
-.description {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  margin: 0;
-  z-index: -1;
-}
-
-.imageDescription:hover {
-  opacity: 0.09;
-}
-
-.card .btn {
-  position: absolute;
-  right: 10px;
-  bottom: 25px;
-  background-color: black;
-  border-radius: 50%;
-  border: black;
-  padding: 5px;
-  color: white;
-  width: 25px;
-  font-weight: bold;
-}
-
-.card .btn:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 10px turquoise;
-}
-
-.father-average {
-  color: rgb(0, 225, 255);
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 350px;
 }
 
 .card .title {
-  position: absolute;
   color: white;
-  top: 30px;
-  left: 10px;
   font-weight: 400;
-  font-size: 1.5em;
-  opacity: 0.8;
+  font-size: 1.1em;
+  padding: 0px 5px;
 }
+
+.card .date {
+  padding: 0px 5px;
+}
+.card .description {
+  color: white;
+  text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 0.8em;
+  max-height: 3rem;
+  padding: 0px 5px;
+}
+
+.card .averageBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.averageBtn .btn {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+}
+
 
 
 
