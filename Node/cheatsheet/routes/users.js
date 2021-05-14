@@ -1,4 +1,6 @@
 const express = require("express");
+const ramda = require("ramda");
+
 const router = express.Router();
 
 const User = require("../models/user");
@@ -49,5 +51,38 @@ router.post("/", (req, res) => {
     // }
         
 });
+
+router.put("/:id", (req, res) => {
+    const id = req.params.id;
+    const body = ramda.pick(["username", "email"], req.body);
+
+    User.findByIdAndUpdate(
+        id,
+        {active: false},
+        body,
+        { new: true, runValidators: true, context: 'query' }, //options
+        (error, updatedUser) => {
+            if(error) {
+                res.status(400).json({ok: false, error});
+            } else {
+                res.status(200).json({ok: true, updatedUser});
+            }
+        }    
+    );
+});
+
+router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+
+    User.findByIdAndRemove(id, (error, updatedUser) => {
+        if(error) {
+            res.status(400).json({ok: false, error});
+        } else if (!updatedUser){
+            res.status(400).json({ok: false, error: "User not found"});
+        } else {
+            res.status(200).json({ok: true, updatedUser});
+        }
+    })
+})
 
 module.exports = router;

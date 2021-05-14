@@ -33,6 +33,19 @@ let userSchema = new Schema({
     }
 });
 
+//Modifica a formato Json de objetos
+userSchema.methods.toJSON = function() {
+    const user = this;
+
+    const userObject = user.toObject();
+
+    //El objeto deja de tener la propiedad password y el cliente
+    //no la ve por pantalla
+    delete userObject.password;
+    
+    return userObject;
+}
+
 userSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
 
 module.exports = mongoose.model("User", userSchema);
