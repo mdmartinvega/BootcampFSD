@@ -11,12 +11,8 @@ let Schema = mongoose.Schema;
 
 //Acepta dos campos, los valores que van a ser válidos y el mensaje de error
 //si eso no se cumple
-const validRoles = {
-    values: ["ADMIN", "USER"],
-    message: "{VALUE} is not a valid role"
-}
 
-let userSchema = new Schema({
+let todoSchema = new Schema({
     title: {
         type: String,
         required: [true, "Title is required"],
@@ -24,7 +20,7 @@ let userSchema = new Schema({
     },
     completed: {
         type: Boolean,
-        required: false
+        default: false
     },
     active: {
         type: Boolean,
@@ -32,6 +28,6 @@ let userSchema = new Schema({
     }
 });
 
-userSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
+todoSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
 
-module.exports = mongoose.model("ToDoList", userSchema);
+module.exports = mongoose.model("ToDoList", todoSchema);

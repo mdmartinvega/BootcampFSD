@@ -19,27 +19,15 @@ router.get("/", (req, res) => {
     });
 });
 
-    // router.get("/", (req, res) => {
-    //     res.json({message: "Petición GET recibida correctamente"});
-    // });
-
-    router.get("/:id", (req, res) => {
-        let id = req.params.id;
-        res.json({message: `Petición GET con parámetro: ${id}`});
-    });
 
 router.post("/", (req, res) => {
     let body = req.body;
 
     const toDoList = new ToDoList({
         title: body.title,
-        completed: false,
-        active: true
+        completed: body.completed,
+        active: body.active
     });
-
-//El método save de mongoose sirve para guardar un objeto en nuestra base de datos
-//en este caso un usuario a través de la petición POST. Con user.save(); ya lo tendríamos
-//salvado pero queremos darle feedback al cliente
 
     toDoList.save((error, savedToDo) => {
         if(error) {
@@ -53,7 +41,7 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
     const id = req.params.id;
-    const body = ramda.pick(["title", "completed"], req.body);
+    const body = ramda.pick(["title", "completed", "active"], req.body);
 
     ToDoList.findByIdAndUpdate(
         id,
@@ -71,8 +59,9 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
     const id = req.params.id;
+    const body = ramda.pick(["title", "completed", "active"], req.body);
 
-    ToDoList.findByIdAndRemove(id, (error, updatedToDoList) => {
+    /*     ToDoList.findByIdAndRemove(id, (error, updatedToDoList) => {
         if(error) {
             res.status(400).json({ok: false, error});
         } else if (!updatedToDoList){
@@ -80,7 +69,20 @@ router.delete("/:id", (req, res) => {
         } else {
             res.status(200).json({ok: true, updatedToDoList});
         }
-    })
+    })*/
+
+    ToDoList.findByIdAndUpdate(
+        id,
+        body,
+        { new: true, runValidators: true, context: 'query' }, //options
+        (error, updatedToDoList) => {
+            if(error) {
+                res.status(400).json({ok: false, error});
+            } else {
+                res.status(200).json({ok: true, updatedToDoList});
+            }
+        }    
+    );
 })
 
 module.exports = router;

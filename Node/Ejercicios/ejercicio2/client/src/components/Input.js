@@ -1,17 +1,25 @@
-
+import { API_URL } from "../settings";
 import {useState} from 'react';
 
-export default function Input({ setToDoList }) {
+export default function Input() {
+
 
     const[input, setInput] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        setToDoList(currentTodos => [{title: input, completed:false}, ...currentTodos]);
+        fetch(API_URL, {
+            method: "POST",
+            body: JSON.stringify({"title": input}),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(response => response.json())
+        .then(json => console.log(json));
 
         setInput("");
     }
+
     return (
         <form onSubmit = {handleSubmit} className="my-4 mx-4">
             <input type="text"
@@ -20,7 +28,6 @@ export default function Input({ setToDoList }) {
             onChange={e => setInput(e.target.value)}
             //Siempre en los formularios
             value={input} /> 
-
         </form>
     )
 }
