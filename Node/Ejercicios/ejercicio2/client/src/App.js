@@ -5,7 +5,7 @@ import Input from './components/Input';
 
 function App() {
 
-  const URL = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
+  const URL = "http://localhost:3001/toDoLists/";
 
   const initialState = [];
   const [toDoList, setToDoList] = useState(initialState);
@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
    fetch(URL)
     .then(response => response.json())
-    .then(data => setToDoList(data.splice(0, 20)));
+    .then(data => setToDoList(data.toDoLists));
   }, []);
   
   return (
@@ -24,8 +24,6 @@ function App() {
     <Input setToDoList = {setToDoList}/>
     <ToDoLists toDoList = {toDoList} setToDoList = {setToDoList}/>
 
-    
-    
     </div>
   );
 }
