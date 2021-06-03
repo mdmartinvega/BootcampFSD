@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
     const user = new User({
         username: body.username,
         email: body.email,
-        password: body.password
+        password: bcrypt.hashSync(body.password, 10)
     });
 
     user.save((error, savedUser) => {
