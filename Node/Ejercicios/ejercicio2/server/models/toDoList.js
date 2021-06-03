@@ -1,14 +1,18 @@
+//Mongoose nos permite crear esquemas con objetos fuertemente tipados,
+//exactamente los valores que le requerimos
+
+//Models va a definir como van a ser los esquemas de cada colección
+//Modelo es la representación de una entidad de la BBDD, productos, usuarios,,,,
+
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 
 let Schema = mongoose.Schema;
 
-const validRoles = {
-    values: ["ADMIN", "USER"],
-    message: "{VALUE} is not a valid role"
-}
+//Acepta dos campos, los valores que van a ser válidos y el mensaje de error
+//si eso no se cumple
 
-let userSchema = new Schema({
+let todoSchema = new Schema({
     title: {
         type: String,
         required: [true, "Title is required"],
@@ -16,7 +20,7 @@ let userSchema = new Schema({
     },
     completed: {
         type: Boolean,
-        required: false
+        default: false
     },
     active: {
         type: Boolean,
@@ -24,6 +28,6 @@ let userSchema = new Schema({
     }
 });
 
-userSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
+todoSchema.plugin(uniqueValidator, {message: "{PATH} should be unique"})
 
-module.exports = mongoose.model("ToDoList", userSchema);
+module.exports = mongoose.model("ToDoList", todoSchema);

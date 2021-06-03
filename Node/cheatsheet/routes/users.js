@@ -1,19 +1,23 @@
+//Grupo en endpoints son los que metemos en la carpeta routes
+
 const express = require("express");
 const ramda = require("ramda");
 
 const router = express.Router();
 
+//Importamos para que no nos de error al crear el POST
 const User = require("../models/user");
 
 router.get("/", (req, res) => {
     //Similar al find de mongo. Si el filtro está vacío, 
-    //me devuelve todos los documentos.
+    //me devuelve todos los documentos. Si hay algún error lo pasa y si no nos devuelve 
+    //todos los documentos que hacen match con el filtro, si no hay filtro pues todos lod de la colección
     User.find({}).exec((error, users) => {//Dentro del filtro ponemos
         //lo que buscamos, por ejemplo {role: "ADMIN"}.
         if(error) {
             res.status(400).json({ok: false, error});
         } else {
-            res.status(201).json({ok: true, users})
+            res.status(200).json({ok: true, users})
         }
     });
 });
@@ -35,7 +39,9 @@ router.post("/", (req, res) => {
         email: body.email,
         password: bcrypt.hashSync(body.password, 10)
     });
-
+    //El método save de mongoose sirve para guardar un objeto en nuestra base de datos
+    //en este caso un usuario a través de la petición POST. Con user.save(); ya lo tendríamos
+    //salvado pero queremos darle feedback al cliente
     user.save((error, savedUser) => {
         if(error) {
             res.status(400).json({ok: false,error});
@@ -85,4 +91,5 @@ router.delete("/:id", (req, res) => {
     })
 })
 
+//Exportamos router
 module.exports = router;
