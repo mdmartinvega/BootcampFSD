@@ -3,7 +3,6 @@ import {useState} from 'react';
 
 export default function Input() {
 
-
     const[input, setInput] = useState("");
 
     function handleSubmit(e) {

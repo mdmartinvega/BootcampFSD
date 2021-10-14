@@ -23,9 +23,6 @@ function App() {
     <h3 className="mt-4 mb-4">To-Do List</h3>
     <Input setToDoList = {setToDoList}/>
     <ToDoLists toDoList = {toDoList} setToDoList = {setToDoList}/>
-
-    
-    
     </div>
   );
 }
